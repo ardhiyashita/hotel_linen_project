@@ -14,7 +14,7 @@
                 <div class="btn-group">
                     <button type="button" id="deleteAllChecked" disabled onclick="nonAktifkan()" class="d-none d-sm-inline-block btn btn-m btn-danger shadow-sm mb-3" style="float: right;">
                         <i class="fas fa-trash-alt fa-sm text-white-50"></i>  Hapus Pilihan</button>
-                    <a href="{{ route('hotel_transaction_add') }}" class="d-none d-sm-inline-block btn btn-m btn-info shadow-sm mb-3 mr-2" style="float: right;">
+                    <a href="" class="d-none d-sm-inline-block btn btn-m btn-info shadow-sm mb-3 mr-2" style="float: right;">
                         + Tambah List</a>
                 </div>
             </div>
@@ -35,6 +35,10 @@
                                 <th class="border-top-0" style="text-align: center">Torn</th>
                                 <th class="border-top-0" style="text-align: center">Train Status</th>
                                 <th class="border-top-0" style="text-align: center">Delivery Status</th>
+                                <th class="border-top-0" style="text-align: center">Discard</th>
+                                <th class="border-top-0" style="text-align: center">Treatment</th>
+                                <th class="border-top-0" style="text-align: center">Request Linen</th>
+                                <th class="border-top-0" style="text-align: center">Driver</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
@@ -52,11 +56,16 @@
                                 <th class="border-top-0" style="text-align: center">Torn</th>
                                 <th class="border-top-0" style="text-align: center">Train Status</th>
                                 <th class="border-top-0" style="text-align: center">Delivery Status</th>
+                                <th class="border-top-0" style="text-align: center">Discard</th>
+                                <th class="border-top-0" style="text-align: center">Treatment</th>
+                                <th class="border-top-0" style="text-align: center">Request Linen</th>
+                                <th class="border-top-0" style="text-align: center">Driver</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             
+                        
                             <tr>
                                 <td><input type="checkbox" class="cb_child" value=""></td>
                                 <td>1.</td>
@@ -149,7 +158,7 @@
                     all_ids.push(elm.value);
                 })
                 $.ajax({
-                    url: "{{ route('produk-delete-checked') }}",
+                    url: "",
                     method: 'post',
                     data: {ids:all_ids},
                     success:function(){

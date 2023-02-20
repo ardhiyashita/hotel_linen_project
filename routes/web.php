@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\CobaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HotelTransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +21,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coba', [CobaController::class, 'coba']);
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/coba', [CobaController::class, 'coba']);
+    Route::get('/home', [DashboardController::class, 'index'])->name('home');
+
+    Route::get('/hotel_transaction', [HotelTransactionController::class, 'index'])->name('hotel_transaction_index');
+    Route::get('/hotel_transaction_create', [HotelTransactionController::class, 'create'])->name('create');
+    Route::get('/hotel_transaction_update', [HotelTransactionController::class, 'update'])->name('update');
+    Route::get('/hotel_transaction_delete', [HotelTransactionController::class, 'delete'])->name('delete');
+    Route::get('/hotel_transaction_detail', [HotelTransactionController::class, 'detail'])->name('detail');
+
+}); 
 
 require __DIR__ . '/auth.php';

@@ -22,7 +22,7 @@
     width: 0;
     border-right: 1px solid $border-color;
     height: calc(#{$topbar-base-height} - 2rem);
-    margin: auto 1rem;
+    margin: auto 0.25rem;
   }
   .nav-item {
     .nav-link {

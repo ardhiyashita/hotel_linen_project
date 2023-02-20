@@ -4,9 +4,9 @@
 
 @section('content')
 <div class="row">
-    <div class="row mb-3">
+    <div class="row">
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -20,14 +20,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -41,14 +41,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -62,14 +62,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -83,13 +83,13 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
+                        <a href="{{ route('hotel_transaction_index') }}" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-secondary shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -103,13 +103,13 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-secondary">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-secondary">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -123,13 +123,13 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-info">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-info">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -143,14 +143,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -164,14 +164,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -185,14 +185,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <!-- <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -206,13 +206,13 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-secondary shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -226,19 +226,18 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-secondary">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-secondary">More Info >></a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                <br>
+                            <div class="text-xs font-weight-bold text-info text-uppercase">
                                 Linen Center
                                 <br>
                                 Laundry Plan
@@ -250,14 +249,14 @@
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
                         </div>
                     </div>
-                    <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-info">More Info >></a>
+                    <div class="mt-1" style="display: inline-block; text-align: right; width: 100%">
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-info">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -271,14 +270,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-primary">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -292,14 +291,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-success">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -313,14 +312,14 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-danger">More Info >></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-xl-1 col-6 mb-4">
+        <div class="col-xl-3 col-xl-1 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body" style="padding-bottom: 0">
                     <div class="row no-gutters align-items-center">
@@ -334,7 +333,7 @@
                         </div>
                     </div>
                     <div class="mt-2" style="display: inline-block; text-align: right; width: 100%">
-                        <a href="{{ route('hotel_transaction_list') }}" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
+                        <a href="" class="text-xs font-weight-bold text-uppercase text-warning">More Info >></a>
                     </div>
                 </div>
             </div>
@@ -371,7 +370,7 @@
     <script>
         getCharPenjualan = () => {
             $.ajax({
-                url: '{{ route("get-data-penjualan") }}',
+                url: 'n") }}',
                 method: 'GET',
                 success: function(response) {
                     var ctx = document.getElementById('chart-penjualan');
@@ -418,7 +417,7 @@
         }
         getDataKategoriPenjualan = () => {
             $.ajax({
-                url: '{{ route("get-data-kategori-penjualan") }}',
+                url: 'i-penjualan") }}',
                 method: 'GET',
                 success: function(response) {
                     var ctx = document.getElementById('chart-penjualan-kategori');
