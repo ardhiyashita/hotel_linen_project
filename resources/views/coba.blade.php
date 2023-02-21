@@ -118,7 +118,7 @@
                         <tr>
                             <td>{{ $data2->jabatan->nama_jabatan }} </td>
                             <td>{{ $data2->linen->linen_name }} </td>
-                            <td>{{ $data2->hotel_name }} </td>
+                            <td>{{ $data2->hotel_name }}</td>
                             <td>{{ $data2->place }} </td>
                             <td>{{ $data2->linen_code }} </td>
                             <td>{{ $data2->linen_name }} </td>

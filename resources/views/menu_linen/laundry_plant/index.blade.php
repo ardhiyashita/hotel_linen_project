@@ -10,7 +10,7 @@
         <!-- DataTables Example -->
         <div class="card shadow mb-4">
             <div class="card-header d-sm-flex align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary d-flex">Hotel Trasaction</h6>
+                <h6 class="m-0 font-weight-bold text-primary d-flex">Laundry Plant</h6>
                 <div class="btn-group">
                     <button type="button" id="deleteAllChecked" disabled onclick="nonAktifkan()" class="d-none d-sm-inline-block btn btn-m btn-danger shadow-sm mb-3" style="float: right;">
                         <i class="fas fa-trash-alt fa-sm text-white-50"></i>  Hapus Pilihan</button>
@@ -25,60 +25,35 @@
                             <tr>
                                 <th><input type="checkbox" id="head_cb"></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Train Code</th>
-                                <th class="border-top-0" style="text-align: center">Train Date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
-                                <th class="border-top-0" style="text-align: center">Clean</th>
-                                <th class="border-top-0" style="text-align: center">Soil</th>
-                                <th class="border-top-0" style="text-align: center">Stain</th>
-                                <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Train Status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
-                                <th class="border-top-0" style="text-align: center">Discard</th>
-                                <th class="border-top-0" style="text-align: center">Treatment</th>
-                                <th class="border-top-0" style="text-align: center">Request Linen</th>
-                                <th class="border-top-0" style="text-align: center">Driver</th>
+                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Phone</th>
+                                <th class="border-top-0" style="text-align: center">Email</th>
+                                <th class="border-top-0" style="text-align: center">Linen center</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="font-size: 12px;">
+                        <tfoot style="fonoil: 12px;">
                             <tr>
                                 <th></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Train Code</th>
-                                <th class="border-top-0" style="text-align: center">Train Date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
-                                <th class="border-top-0" style="text-align: center">Clean</th>
-                                <th class="border-top-0" style="text-align: center">Soil</th>
-                                <th class="border-top-0" style="text-align: center">Stain</th>
-                                <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Train Status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
-                                <th class="border-top-0" style="text-align: center">Discard</th>
-                                <th class="border-top-0" style="text-align: center">Treatment</th>
-                                <th class="border-top-0" style="text-align: center">Request Linen</th>
-                                <th class="border-top-0" style="text-align: center">Driver</th>
+                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Phone</th>
+                                <th class="border-top-0" style="text-align: center">Email</th>
+                                <th class="border-top-0" style="text-align: center">Linen center</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            
-                        
+                            @foreach($data2 as $val)
                             <tr>
                                 <td><input type="checkbox" class="cb_child" value=""></td>
-                                <td>1.</td>
-                                <td>MBL-1665647682101</td>
-                                <td>Oct, 13 2022 03:54:42 PM</td>
-                                <td>MBL</td>
-                                <td>Mercure Bali Legian</td>
-                                <td>7</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>Upload Clean</td>
-                                <td>-</td>
+                                <td>{{ $data2->name}}</td>
+                                <td>{{ $data2->code }}</td>
+                                <td>{{ $data2->phone }}</td>
+                                <td>{{ $data2->email }}</td>
+                                <td>{{ $data2->linen_center }}</td>
                                 <td width="160px">
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
@@ -90,7 +65,7 @@
                                     </form>
                                 </td>
                             </tr>
-                            
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
