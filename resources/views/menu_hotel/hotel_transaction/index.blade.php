@@ -78,7 +78,7 @@
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
-                        <tbody>
+                        <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
                                 <td>1</td>
