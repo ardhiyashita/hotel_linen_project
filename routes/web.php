@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/hotel_transaction_delete', [HotelTransactionController::class, 'delete'])->name('delete');
     Route::get('/hotel_transaction_detail', [HotelTransactionController::class, 'detail'])->name('detail');
 
+    Route::get('/linen_to_receive', [HotelTransactionController::class, 'index'])->name('hotel_transaction_index');
+
 }); 
 
 require __DIR__ . '/auth.php';

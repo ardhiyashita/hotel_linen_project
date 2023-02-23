@@ -38,7 +38,7 @@
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="fonoil: 12px;">
+                        <tfoot style="font-size: 12px;">
                             <tr>
                                 <th></th>
                                 <th class="border-top-0" style="text-align: center">No</th>

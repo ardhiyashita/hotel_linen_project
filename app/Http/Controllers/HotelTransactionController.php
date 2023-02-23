@@ -11,7 +11,7 @@ class HotelTransactionController extends Controller
     {
         $data = HotelTransaction::all();
 
-        return view('hotel_transaction/list');
+        return view('menu_hotel/hotel_transaction/index', compact('data'));
     }
 
     public function update(Type $var = null)
