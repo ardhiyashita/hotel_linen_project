@@ -145,7 +145,7 @@
                         <div class="inner">
                         <h3>65</h3>
 
-                        <p>Total Linen Templates</p>
+                        <p>Total Linen Template</p>
                         </div>
                         <div class="icon">
                         <i class="ion ion-pie-graph"></i>
