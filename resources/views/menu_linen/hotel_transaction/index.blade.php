@@ -1,74 +1,101 @@
-@extends('layouts/master')
+@extends('layouts/hotel_linen/master')
 
-@section('title', 'Transaction List')
-
-@section('heading')
-    
-@endsection
+@section('title', 'Hotel Transaction')
 
 @section('content')
-        <!-- DataTables Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header d-sm-flex align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary d-flex">Hotel Transaction</h6>
-                <div class="btn-group">
-                    <button type="button" id="deleteAllChecked" disabled onclick="nonAktifkan()" class="d-none d-sm-inline-block btn btn-m btn-danger shadow-sm mb-3" style="float: right;">
-                        <i class="fas fa-trash-alt fa-sm text-white-50"></i>  Hapus Pilihan</button>
-                    <a href="" class="d-none d-sm-inline-block btn btn-m btn-info shadow-sm mb-3 mr-2" style="float: right;">
-                        + Tambah List</a>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="table" width="100%" cellspacing="0">
-                        <thead style="font-size: 12px;">
+
+<div class="wrapper">
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Hotel Transaction</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+              <li class="breadcrumb-item active">Hotel Transaction</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Kumpulan Menu Linen dari Website HotelKita</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                <thead style="font-size: 12px;">
                             <tr>
-                                <th><input type="checkbox" id="head_cb"></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran code</th>
-                                <th class="border-top-0" style="text-align: center">Tran date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel name</th>
+                                <th class="border-top-0" style="text-align: center">Trans Code</th>
+                                <th class="border-top-0" style="text-align: center">Trans Date</th>
+                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
+                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
                                 <th class="border-top-0" style="text-align: center">Soil</th>
                                 <th class="border-top-0" style="text-align: center">Stain</th>
                                 <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Tran status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery status</th>
+                                <th class="border-top-0" style="text-align: center">Trans Status</th>
+                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
+                                <th class="border-top-0" style="text-align: center">Discard</th>
+                                <th class="border-top-0" style="text-align: center">Treatment</th>
+                                <th class="border-top-0" style="text-align: center">Request Linen</th>
+                                <th class="border-top-0" style="text-align: center">Driver</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
                         <tfoot style="font-size: 12px;">
                             <tr>
-                                <th></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran code</th>
-                                <th class="border-top-0" style="text-align: center">Tran date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel name</th>
+                                <th class="border-top-0" style="text-align: center">Trans Code</th>
+                                <th class="border-top-0" style="text-align: center">Trans Date</th>
+                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
+                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
                                 <th class="border-top-0" style="text-align: center">Soil</th>
                                 <th class="border-top-0" style="text-align: center">Stain</th>
                                 <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Tran status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery status</th>
+                                <th class="border-top-0" style="text-align: center">Trans Status</th>
+                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
+                                <th class="border-top-0" style="text-align: center">Discard</th>
+                                <th class="border-top-0" style="text-align: center">Treatment</th>
+                                <th class="border-top-0" style="text-align: center">Request Linen</th>
+                                <th class="border-top-0" style="text-align: center">Driver</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
-                        <tbody>
-                            @foreach($data2 as $val)
+                        <tbody style="font-size: 12px;">
+                            @foreach($data as $val)
                             <tr>
-                                <td><input type="checkbox" class="cb_child" value=""></td>
-                                <td>{{ $data2->tran_code}}</td>
-                                <td>{{ $data2->tran_date }}</td>
-                                <td>{{ $data2->hotel_code }}</td>
-                                <td>{{ $data2->hotel_name }}</td>
-                                <td>{{ $data2->clean }}</td>
-                                <td>{{ $data2->soil }}</td>
-                                <td>{{ $data2->stain }}</td>
-                                <td>{{ $data2->torn }}</td>
-                                <td>{{ $data2->tran_status }}</td>
-                                <td>{{ $data2->delivery_status }}</td>
+                                <td>1</td>
+                                <td>{{ $val->trans_code}}</td>
+                                <td>{{ $val->trans_date }}</td>
+                                <td>{{ $val->hotel_code }}</td>
+                                <td>{{ $val->hotel_name }}</td>
+                                <td>{{ $val->clean }}</td>
+                                <td>{{ $val->soil }}</td>
+                                <td>{{ $val->stain }}</td>
+                                <td>{{ $val->torn }}</td>
+                                <td>{{ $val->trans_status }}</td>
+                                <td>{{ $val->delivery_status }}</td>
+                                <td>{{ $val->discard }}</td>
+                                <td>{{ $val->treatment }}</td>
+                                <td>{{ $val->request_linen }}</td>
+                                <td>{{ $val->driver }}</td>
                                 <td width="160px">
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
@@ -82,81 +109,43 @@
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>
-                </div>
-                <div class="d-flex justify-content-center">
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
-            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
 
-        @section('js')
-        <script src="{{ asset('assets/datatables/datatables.min.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#table').DataTable();
-            });
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+@endsection
 
-            let isChecked = 0;
-            const table = $('#table').DataTable({
-                "processing": true,
-                "order": [[ 1, 'asc']],     
-                    
-
-                columnDefs: [
-                {
-                    "targets": 0,
-                    "class":"text-nowrap",
-                    "sortable": false,
-                },
-                {
-                    "targets": 10,
-                    "sortable": false,
-                },
-                ]
-            })
-
-            // JQUERY DETECT CHECKED CHECKBOX
-            // $(this)->elemen yang dimaksud untuk diambil atau digunakan
-            $("#head_cb").on('click', function(){
-                var isChecked = $('#head_cb').prop('checked')
-                $('.cb_child').prop('checked', isChecked)
-                
-                // STEP PER STEP
-                // if($(this).prop('checked') == true){
-                //     $('.cb_child').prop('checked', true)
-                // }else{
-                //     $('.cb_child').prop('checked', false)
-                // }
-
-                $('#deleteAllChecked').prop('disabled', !isChecked)
-            })
-
-            $('#table tbody').on('click', '.cb_child', function(){                
-                if($(this).prop('checked') != true){
-                    $('#head_cb').prop('checked', false)
-                }
-
-                let allChecked = $('#table tbody .cb_child:checked')
-                let button_non_aktif_status = (allChecked.length>0)
-                $('#deleteAllChecked').prop('disabled', !button_non_aktif_status)
-            })
-
-            function nonAktifkan(){
-                let checkbox_terpilih = $('#table tbody .cb_child:checked')
-                let all_ids = []
-                $.each(checkbox_terpilih, function(index,elm){
-                    all_ids.push(elm.value);
-                })
-                $.ajax({
-                    url: "",
-                    method: 'post',
-                    data: {ids:all_ids},
-                    success:function(){
-                        location.reload(true);
-                    }
-                })
-            }
-        </script>
-            
-        @endsection
+@section('js')
+<script>
+$(function () {
+    $("#example1").DataTable({
+    "responsive": true, "lengthChange": false, "autoWidth": false,
+    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+    });
+});
+</script>
+    
 @endsection

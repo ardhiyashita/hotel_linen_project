@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\CobaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HotelTransactionController;
+use App\Models\LinenType;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -27,15 +28,44 @@ Route::get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/coba', [CobaController::class, 'coba']);
-    Route::get('/home', [DashboardController::class, 'index'])->name('home');
+    Route::get('/', [DashboardController::class, 'index'])->name('home');
 
-    Route::get('/hotel_transaction', [HotelTransactionController::class, 'index'])->name('hotel_transaction_index');
-    Route::get('/hotel_transaction_create', [HotelTransactionController::class, 'create'])->name('create');
-    Route::get('/hotel_transaction_update', [HotelTransactionController::class, 'update'])->name('update');
-    Route::get('/hotel_transaction_delete', [HotelTransactionController::class, 'delete'])->name('delete');
-    Route::get('/hotel_transaction_detail', [HotelTransactionController::class, 'detail'])->name('detail');
 
-    Route::get('/linen_to_receive', [HotelTransactionController::class, 'index'])->name('hotel_transaction_index');
+    Route::controller(LinenCategory::class)->group(function() {
+        Route::get('/linen_category_index', 'index')->name('linen_category_index');        
+        Route::get('/linen_category_delete', 'delete')->name('linen_category_delete');
+        Route::get('/linen_category_detail', 'detail')->name('linen_category_detail');
+
+    });
+
+    Route::controller(LinenType::class)->group(function() {
+        Route::get('/linen_type_index', 'index')->name('linen_type_index');        
+        Route::get('/linen_type_delete', 'delete')->name('linen_type_delete');
+        Route::get('/linen_type_detail', 'detail')->name('linen_type_detail');
+
+    });
+
+    Route::controller(LinenType::class)->group(function() {
+        Route::get('/linen_template_index', 'index')->name('linen_template_index');        
+        Route::get('/linen_template_delete', 'delete')->name('linen_template_delete');
+        Route::get('/linen_template_detail', 'detail')->name('linen_template_detail');
+
+    });
+
+    Route::controller(LinenType::class)->group(function() {
+        Route::get('/linen_index', 'index')->name('linen_index');        
+        Route::get('/linen_delete', 'delete')->name('linen_delete');
+        Route::get('/linen_detail', 'detail')->name('linen_detail');
+
+    });
+
+    Route::controller(HotelTransactionController::class)->group(function() {
+        Route::get('/hotel_transaction_index', 'index')->name('hotel_transaction_index');        
+        Route::get('/hotel_transaction_delete', 'delete')->name('hotel_transaction_delete');
+        Route::get('/hotel_transaction_detail', 'detail')->name('hotel_transaction_detail');
+
+    });
+
 
 }); 
 
