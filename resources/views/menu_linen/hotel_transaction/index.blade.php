@@ -33,10 +33,13 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Kumpulan Menu Linen dari Website HotelKita</h3>
+              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+                  <i class="mr-1 fas fa-plus">
+                  </i>
+                  Add Data</a>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body">             
                 <table id="example1" class="table table-bordered table-striped">
                 <thead style="font-size: 12px;">
                             <tr>
@@ -81,7 +84,7 @@
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td>1</td>
+                                <td>{{ $loop->iteration}}</td>
                                 <td>{{ $val->trans_code}}</td>
                                 <td>{{ $val->trans_date }}</td>
                                 <td>{{ $val->hotel_code }}</td>
