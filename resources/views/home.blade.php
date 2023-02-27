@@ -16,7 +16,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -33,12 +33,12 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                        <h3>150</h3>
+                        <h3>0</h3>
 
                         <p>Total Linen</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-bag"></i>
+                            <i class="fa fa-shower" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -48,12 +48,12 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>0</h3>
 
                         <p>Total Hotels</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-building" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -63,12 +63,12 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                        <h3>44</h3>
+                            <h3>0</h3>
 
                         <p>Total Drivers</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                            <i class="fa fa-user" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -78,12 +78,12 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                        <h3>65</h3>
+                            <h3>0</h3>
 
                         <p>Hotel Transaction</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                            <i class="fa fa-home" style="font-size: 60px"></i>
                         </div>
                         <a href="{{ route('hotel_transaction_index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -98,12 +98,12 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                        <h3>150</h3>
+                            <h3>0</h3>
 
                         <p>Internal Transaction</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-bag"></i>
+                            <i class="fa fa-home" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -113,12 +113,12 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>0</h3>
 
                         <p>Laundry Plant</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-building" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -128,12 +128,12 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                        <h3>44</h3>
+                            <h3>0</h3>
 
                         <p>Linen Center</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                            <i class="fa fa-building" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -143,12 +143,12 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                        <h3>65</h3>
+                            <h3>0</h3>
 
                         <p>Total Linen Template</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                            <i class="fa fa-shower" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -163,12 +163,12 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                        <h3>150</h3>
+                            <h3>0</h3>
 
                         <p>Total Registered Linen</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-bag"></i>
+                            <i class="fa fa-registered" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -178,12 +178,12 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>0</h3>
 
                         <p>Linen To Packed</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-box" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -193,12 +193,12 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                        <h3>44</h3>
+                            <h3>0</h3>
 
                         <p>Check Linen Status</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                            <i class="fa fa-check-circle" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -208,14 +208,14 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                        <h3>65</h3>
+                            <h3>0</h3>
 
                         <p>Linen Center</p>
                         <p>Laundry Plant</p>
                         <p>Clean Linen</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                            <i class="fa fa-check-circle" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -230,12 +230,12 @@
                     <!-- small box -->
                     <div class="small-box bg-secondary">
                         <div class="inner">
-                        <h3>150</h3>
+                            <h3>0</h3>
 
                         <p>Internal Reject</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-bag"></i>
+                            <i class="fa fa-list-alt" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -245,12 +245,12 @@
                     <!-- small box -->
                     <div class="small-box bg-secondary">
                         <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>0</h3>
 
                         <p>Billing to LP</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-money-bill" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -260,12 +260,12 @@
                     <!-- small box -->
                     <div class="small-box bg-secondary">
                         <div class="inner">
-                        <h3>44</h3>
+                            <h3>0</h3>
 
                         <p>Billing To Hotel</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                            <i class="fa fa-money-bill" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -275,12 +275,12 @@
                     <!-- small box -->
                     <div class="small-box bg-secondary">
                         <div class="inner">
-                        <h3>65</h3>
+                            <h3>0</h3>
 
                         <p>Linen Aging In 15 Days</p>
                         </div>
                         <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                            <i class="fa fa-list-alt" style="font-size: 60px"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
