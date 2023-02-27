@@ -36,7 +36,7 @@
                         </thead>
                         <tfoot style="font-size: 12px;">
                             <tr>
-                                <th></th>
+                                
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Hotel code</th>
                                 <th class="border-top-0" style="text-align: center">Hotel name</th>

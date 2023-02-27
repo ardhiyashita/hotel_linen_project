@@ -1,0 +1,9 @@
+menu yang perlu dibuat :
+1. discard linen (masih kosong)
+2. stock
+    - clean linen
+    - soil linen
+    - aging linen
+3. billing (masinh kosong)
+4. report (masih kosong)
+5. user
