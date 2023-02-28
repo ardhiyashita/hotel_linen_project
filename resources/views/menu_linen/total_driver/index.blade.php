@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Hotel Transaction')
+@section('title', 'Total Driver')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Hotel Transaction</h1>
+            <h1>Total Driver</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Hotel Transaction</li>
+              <li class="breadcrumb-item active">Total Driver</li>
             </ol>
           </div>
         </div>
@@ -33,15 +33,15 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('driver_create') }}" class="btn bg-primary" style="width: 300px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                    <table class="table table-bordered" id="table" width="100%" cellspacing="0">
-                        <thead style="font-size: 12px;">
+              <div class="card-body">             
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Driver id</th>
@@ -52,7 +52,7 @@
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="font-size: 12px;">
+                        <tfoot>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Driver id</th>
@@ -64,7 +64,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($data2 as $val)
+                            @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
                                 <td>{{ $val->driver_id}}</td>
@@ -72,13 +72,17 @@
                                 <td>{{ $val->last_name }}</td>
                                 <td>{{ $val->gender }}</td>
                                 <td>{{ $val->phone }}</td>
-                                <td width="160px">
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

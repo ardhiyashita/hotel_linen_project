@@ -69,12 +69,15 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::controller(DriverController::class)->group(function() {
         Route::get('/driver_index', 'index')->name('driver_index');        
+        Route::get('/driver_create', 'create')->name('driver_create');   
+        Route::post('/driver_create_save', 'create_save')->name('driver_create_save');   
         Route::get('/driver_read', 'read')->name('driver_read');
+        Route::get('/driver_update', 'update')->name('driver_update');        
+        Route::post('/driver_update_save', 'update_save')->name('driver_update_save');        
         Route::get('/driver_delete', 'delete')->name('driver_delete');
         
 
     });
-
 
     Route::controller(HotelTransactionController::class)->group(function() {
         Route::get('/hotel_transaction_index', 'index')->name('hotel_transaction_index');        
