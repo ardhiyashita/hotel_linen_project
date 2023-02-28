@@ -44,72 +44,49 @@
                 <thead style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran Code</th>
-                                <th class="border-top-0" style="text-align: center">Tran Date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
+                                <th class="border-top-0" style="text-align: center">Tran code</th>
+                                <th class="border-top-0" style="text-align: center">Tran date</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
                                 <th class="border-top-0" style="text-align: center">Soil</th>
                                 <th class="border-top-0" style="text-align: center">Stain</th>
                                 <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Trans Status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
-                                <th class="border-top-0" style="text-align: center">Discard</th>
-                                <th class="border-top-0" style="text-align: center">Treatment</th>
-                                <th class="border-top-0" style="text-align: center">Request Linen</th>
-                                <th class="border-top-0" style="text-align: center">Driver</th>
+                                <th class="border-top-0" style="text-align: center">Tran status</th>
+                                <th class="border-top-0" style="text-align: center">Delivery status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
                         <tfoot style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran Code</th>
-                                <th class="border-top-0" style="text-align: center">Tran Date</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Code</th>
-                                <th class="border-top-0" style="text-align: center">Hotel Name</th>
+                                <th class="border-top-0" style="text-align: center">Tran code</th>
+                                <th class="border-top-0" style="text-align: center">Tran date</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
                                 <th class="border-top-0" style="text-align: center">Soil</th>
                                 <th class="border-top-0" style="text-align: center">Stain</th>
                                 <th class="border-top-0" style="text-align: center">Torn</th>
-                                <th class="border-top-0" style="text-align: center">Trans Status</th>
-                                <th class="border-top-0" style="text-align: center">Delivery Status</th>
-                                <th class="border-top-0" style="text-align: center">Discard</th>
-                                <th class="border-top-0" style="text-align: center">Treatment</th>
-                                <th class="border-top-0" style="text-align: center">Request Linen</th>
-                                <th class="border-top-0" style="text-align: center">Driver</th>
+                                <th class="border-top-0" style="text-align: center">Tran status</th>
+                                <th class="border-top-0" style="text-align: center">Delivery status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->tran_code}}</td>
-                                <td>{{ $val->tran_date }}</td>
-                                <td>{{ $val->hotel_code }}</td>
-                                <td>{{ $val->hotel_name }}</td>
-                                <td>{{ $val->clean }}</td>
-                                <td>{{ $val->soil }}</td>
-                                <td>{{ $val->stain }}</td>
-                                <td>{{ $val->torn }}</td>
-                                <td>{{ $val->trans_status }}</td>
-                                <td>{{ $val->delivery_status }}</td>
-                                <td>{{ $val->discard }}</td>
-                                <td>{{ $val->treatment }}</td>
-                                <td>{{ $val->request_linen }}</td>
-                                <td>{{ $val->driver }}</td>
-                                <td>
+                                <td>{{ $data2->tran_code}}</td>
+                                <td>{{ $data2->tran_date }}</td>
+                                <td>{{ $data2->clean }}</td>
+                                <td>{{ $data2->soil }}</td>
+                                <td>{{ $data2->stain }}</td>
+                                <td>{{ $data2->torn }}</td>
+                                <td>{{ $data2->tran_status }}</td>
+                                <td>{{ $data2->delivery_status }}</td>
+                                <td width="160px">
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
-                                        <a type="submit" class="btn bg-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
-                                          <i class="fas fa-trash"></i>
-                                        </a>
+                                        <a type="button" class="btn btn-success" href="">Edit</a>
+                                        <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
                                         </div>
                                     </form>
                                 </td>

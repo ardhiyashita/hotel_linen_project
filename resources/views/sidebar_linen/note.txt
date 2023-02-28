@@ -1,0 +1,15 @@
+menu yang perlu dibuat :
+1. transaction management 
+    - internal Reject
+    - Packing
+    - transfer 
+2. billing management
+    - billing
+    - report
+3. preset 
+    - linen Category
+    - linen type
+    - supplier
+4. privilage
+    - User
+    - role 
