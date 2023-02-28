@@ -43,7 +43,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead style="font-size: 12px;">
                             <tr>
-                                <th><input type="checkbox" id="head_cb"></th>
+                                
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Hotel code</th>
                                 <th class="border-top-0" style="text-align: center">Hotel name</th>
@@ -56,7 +56,7 @@
                         </thead>
                         <tfoot style="font-size: 12px;">
                             <tr>
-                                <th><input type="checkbox" id="head_cb"></th>
+                                
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Hotel code</th>
                                 <th class="border-top-0" style="text-align: center">Hotel name</th>
@@ -70,20 +70,24 @@
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td><input type="checkbox" class="cb_child" value=""></td>
-                                <td>{{ $data2->hotel_code}}</td>
-                                <td>{{ $data2->hotel_name }}</td>
-                                <td>{{ $data2->laundry_plant }}</td>
-                                <td>{{ $data2->contact_name }}</td>
-                                <td>{{ $data2->phone }}</td>
-                                <td>{{ $data2->email }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->hotel_code}}</td>
+                                <td>{{ $val->hotel_name }}</td>
+                                <td>{{ $val->laundry_plant }}</td>
+                                <td>{{ $val->contact_name }}</td>
+                                <td>{{ $val->phone }}</td>
+                                <td>{{ $val->email }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

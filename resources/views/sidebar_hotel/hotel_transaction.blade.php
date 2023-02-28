@@ -72,21 +72,26 @@
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td>{{ $data2->tran_code}}</td>
-                                <td>{{ $data2->tran_date }}</td>
-                                <td>{{ $data2->clean }}</td>
-                                <td>{{ $data2->soil }}</td>
-                                <td>{{ $data2->stain }}</td>
-                                <td>{{ $data2->torn }}</td>
-                                <td>{{ $data2->tran_status }}</td>
-                                <td>{{ $data2->delivery_status }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->tran_code}}</td>
+                                <td>{{ $val->tran_date }}</td>
+                                <td>{{ $val->clean }}</td>
+                                <td>{{ $val->soil }}</td>
+                                <td>{{ $val->stain }}</td>
+                                <td>{{ $val->torn }}</td>
+                                <td>{{ $val->tran_status }}</td>
+                                <td>{{ $val->delivery_status }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

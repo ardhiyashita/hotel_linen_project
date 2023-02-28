@@ -44,8 +44,8 @@
                 <thead style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran Code</th>
-                                <th class="border-top-0" style="text-align: center">Tran Date</th>
+                                <th class="border-top-0" style="text-align: center">Trans Code</th>
+                                <th class="border-top-0" style="text-align: center">Trans Date</th>
                                 <th class="border-top-0" style="text-align: center">Hotel Code</th>
                                 <th class="border-top-0" style="text-align: center">Hotel Name</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
@@ -64,8 +64,8 @@
                         <tfoot style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Tran Code</th>
-                                <th class="border-top-0" style="text-align: center">Tran Date</th>
+                                <th class="border-top-0" style="text-align: center">Trans Code</th>
+                                <th class="border-top-0" style="text-align: center">Trans Date</th>
                                 <th class="border-top-0" style="text-align: center">Hotel Code</th>
                                 <th class="border-top-0" style="text-align: center">Hotel Name</th>
                                 <th class="border-top-0" style="text-align: center">Clean</th>
@@ -85,8 +85,8 @@
                             @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->tran_code}}</td>
-                                <td>{{ $val->tran_date }}</td>
+                                <td>{{ $val->trans_code}}</td>
+                                <td>{{ $val->trans_date }}</td>
                                 <td>{{ $val->hotel_code }}</td>
                                 <td>{{ $val->hotel_name }}</td>
                                 <td>{{ $val->clean }}</td>

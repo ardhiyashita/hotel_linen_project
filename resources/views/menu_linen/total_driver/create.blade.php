@@ -42,24 +42,44 @@
                             Driver ID
                             <input class="form-control form-control-sm" name="driver_id" type="text" placeholder="-- Driver ID --">
                         </div>    
+                        @error('driver_id')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             First Name
                             <input class="form-control form-control-sm" name="first_name" type="text" placeholder="-- First Name --">
                         </div>
+                        @error('first_name')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             Last Name
                             <input class="form-control form-control-sm" name="last_name" type="text" placeholder="-- Last Name --">
                         </div>
+                        @error('last_name')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             Gender
                             <input class="form-control form-control-sm" name="gender" type="text" placeholder="-- Gender --">
                         </div>
+                        @error('gender')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+                        
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             Phone
                             <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --">
                         </div>    
+                        @error('phone')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             Laundry Plant
                             <select class="selectpicker form-control form-control-sm" name="laundry_plant" id="laundry_plant" data-live-search="true">
@@ -69,6 +89,10 @@
                             @endforeach
                         </select>
                         </div>
+                        @error('laundry_plant')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             Company
                             <select class="selectpicker form-control form-control-sm" name="company" id="number" data-live-search="true">
@@ -76,9 +100,13 @@
                                 <option value="Company Laundry"> Company Laundry </option>
                         </select>
                         </div>
+                        @error('company')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                         <div class="form-group">
                             Note
-                            <input class="form-control form-control-sm" name="note" type="text" placeholder="-- Note --">
+                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --"></textarea>
                         </div>
                     </div>
 

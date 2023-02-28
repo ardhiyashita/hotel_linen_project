@@ -1,29 +1,48 @@
-@extends('layouts/master')
+@extends('layouts/hotel_linen/master')
 
-@section('title', 'Transaction List')
-
-@section('heading')
-    
-@endsection
+@section('title', 'Laundry Plant')
 
 @section('content')
-        <!-- DataTables Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header d-sm-flex align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary d-flex">Laundry Plant</h6>
-                <div class="btn-group">
-                    <button type="button" id="deleteAllChecked" disabled onclick="nonAktifkan()" class="d-none d-sm-inline-block btn btn-m btn-danger shadow-sm mb-3" style="float: right;">
-                        <i class="fas fa-trash-alt fa-sm text-white-50"></i>  Hapus Pilihan</button>
-                    <a href="" class="d-none d-sm-inline-block btn btn-m btn-info shadow-sm mb-3 mr-2" style="float: right;">
-                        + Tambah List</a>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="table" width="100%" cellspacing="0">
-                        <thead style="font-size: 12px;">
+
+<div class="wrapper">
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Laundry Plant</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+              <li class="breadcrumb-item active">Laundry Plant</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+              <div class="card-header">
+              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+                  <i class="mr-1 fas fa-plus">
+                  </i>
+                  Add Data</a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">             
+                <table id="example1" class="table table-bordered table-striped">
+                <thead style="font-size: 12px;">
                             <tr>
-                                <th><input type="checkbox" id="head_cb"></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Name</th>
                                 <th class="border-top-0" style="text-align: center">Code</th>
@@ -33,9 +52,8 @@
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="fonoil: 12px;">
+                        <tfoot style="font-size: 12px;">
                             <tr>
-                                <th></th>
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Name</th>
                                 <th class="border-top-0" style="text-align: center">Code</th>
@@ -46,102 +64,68 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($data2 as $val)
+                            @foreach($data as $val)
                             <tr>
-                                <td><input type="checkbox" class="cb_child" value=""></td>
-                                <td>{{ $data2->name}}</td>
-                                <td>{{ $data2->code }}</td>
-                                <td>{{ $data2->phone }}</td>
-                                <td>{{ $data2->email }}</td>
-                                <td>{{ $data2->linen_center }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->name}}</td>
+                                <td>{{ $val->code }}</td>
+                                <td>{{ $val->phone }}</td>
+                                <td>{{ $val->email }}</td>
+                                <td>{{ $val->linen_center }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>
-                </div>
-                <div class="d-flex justify-content-center">
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
-            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
 
-        @section('js')
-        <script src="{{ asset('assets/datatables/datatables.min.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#table').DataTable();
-            });
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+@endsection
 
-            let isChecked = 0;
-            const table = $('#table').DataTable({
-                "processing": true,
-                "order": [[ 1, 'asc']],     
-                    
-
-                columnDefs: [
-                {
-                    "targets": 0,
-                    "class":"text-nowrap",
-                    "sortable": false,
-                },
-                {
-                    "targets": 10,
-                    "sortable": false,
-                },
-                ]
-            })
-
-            // JQUERY DETECT CHECKED CHECKBOX
-            // $(this)->elemen yang dimaksud untuk diambil atau digunakan
-            $("#head_cb").on('click', function(){
-                var isChecked = $('#head_cb').prop('checked')
-                $('.cb_child').prop('checked', isChecked)
-                
-                // STEP PER STEP
-                // if($(this).prop('checked') == true){
-                //     $('.cb_child').prop('checked', true)
-                // }else{
-                //     $('.cb_child').prop('checked', false)
-                // }
-
-                $('#deleteAllChecked').prop('disabled', !isChecked)
-            })
-
-            $('#table tbody').on('click', '.cb_child', function(){                
-                if($(this).prop('checked') != true){
-                    $('#head_cb').prop('checked', false)
-                }
-
-                let allChecked = $('#table tbody .cb_child:checked')
-                let button_non_aktif_status = (allChecked.length>0)
-                $('#deleteAllChecked').prop('disabled', !button_non_aktif_status)
-            })
-
-            function nonAktifkan(){
-                let checkbox_terpilih = $('#table tbody .cb_child:checked')
-                let all_ids = []
-                $.each(checkbox_terpilih, function(index,elm){
-                    all_ids.push(elm.value);
-                })
-                $.ajax({
-                    url: "",
-                    method: 'post',
-                    data: {ids:all_ids},
-                    success:function(){
-                        location.reload(true);
-                    }
-                })
-            }
-        </script>
-            
-        @endsection
+@section('js')
+<script>
+$(function () {
+    $("#example1").DataTable({
+    "responsive": true, "lengthChange": false, "autoWidth": false,
+    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+    });
+});
+</script>
+    
 @endsection

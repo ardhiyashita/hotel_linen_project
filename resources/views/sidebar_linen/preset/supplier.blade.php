@@ -64,7 +64,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($data2 as $val)
+                            @foreach($val as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
                                 <td>{{ $val->supplier_code}}</td>
@@ -72,13 +72,17 @@
                                 <td>{{ $val->manufacture }}</td>
                                 <td>{{ $val->phone }}</td>
                                 <td>{{ $val->email }}</td>
-                                <td width="160px">
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

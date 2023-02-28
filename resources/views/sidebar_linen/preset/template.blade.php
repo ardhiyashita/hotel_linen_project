@@ -70,20 +70,25 @@
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td>{{ $data2->code}}</td>
-                                <td>{{ $data2->template_name }}</td>
-                                <td>{{ $data2->linen_code }}</td>
-                                <td>{{ $data2->linen_type }}</td>
-                                <td>{{ $data2->size }}</td>
-                                <td>{{ $data2->color }}</td>
-                                <td>{{ $data2->supplier }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->code}}</td>
+                                <td>{{ $val->template_name }}</td>
+                                <td>{{ $val->linen_code }}</td>
+                                <td>{{ $val->linen_type }}</td>
+                                <td>{{ $val->size }}</td>
+                                <td>{{ $val->color }}</td>
+                                <td>{{ $val->supplier }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

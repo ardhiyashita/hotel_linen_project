@@ -114,15 +114,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($data2 as $val)
+                      @foreach($val as $val)
                         <tr>
-                            <td>{{ $data2->jabatan->nama_jabatan }} </td>
-                            <td>{{ $data2->linen->linen_name }} </td>
-                            <td>{{ $data2->hotel_name }}</td>
-                            <td>{{ $data2->place }} </td>
-                            <td>{{ $data2->linen_code }} </td>
-                            <td>{{ $data2->linen_name }} </td>
-                            <td>{{ $data2->size }} </td>
+                            <td>{{ $val->jabatan->nama_jabatan }} </td>
+                            <td>{{ $val->linen->linen_name }} </td>
+                            <td>{{ $val->hotel_name }}</td>
+                            <td>{{ $val->place }} </td>
+                            <td>{{ $val->linen_code }} </td>
+                            <td>{{ $val->linen_name }} </td>
+                            <td>{{ $val->size }} </td>
                         </tr>
                         @endforeach
                     </tbody>

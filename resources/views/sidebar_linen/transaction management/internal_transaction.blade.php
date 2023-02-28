@@ -68,19 +68,24 @@
                         <tbody style="font-size: 12px;">
                             @foreach($data as $val)
                             <tr>
-                                <td>{{ $data2->trans_code}}</td>
-                                <td>{{ $data2->trans_date }}</td>
-                                <td>{{ $data2->type }}</td>
-                                <td>{{ $data2->laundry }}</td>
-                                <td>{{ $data2->total }}</td>
-                                <td>{{ $data2->status }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->trans_code}}</td>
+                                <td>{{ $val->trans_date }}</td>
+                                <td>{{ $val->type }}</td>
+                                <td>{{ $val->laundry }}</td>
+                                <td>{{ $val->total }}</td>
+                                <td>{{ $val->status }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

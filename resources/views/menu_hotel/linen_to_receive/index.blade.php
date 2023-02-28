@@ -23,7 +23,7 @@
                     <table class="table table-bordered" id="table" width="100%" cellspacing="0">
                         <thead style="font-size: 12px;">
                             <tr>
-                                <th><input type="checkbox" id="head_cb"></th>
+                                
                                 <th class="border-top-0" style="text-align: center">No</th>
                                 <th class="border-top-0" style="text-align: center">Packing Code</th>
                                 <th class="border-top-0" style="text-align: center">Packing Date</th>
@@ -50,23 +50,27 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($data2 as $val)
+                            @foreach($val as $val)
                             <tr>
-                                <td><input type="checkbox" class="cb_child" value=""></td>
-                                <td>{{ $data2->packing_code}}</td>
-                                <td>{{ $data2->packing_date }}</td>
-                                <td>{{ $data2->packed_by }}</td>
-                                <td>{{ $data2->hotel_code }}</td>
-                                <td>{{ $data2->hotel_name }}</td>
-                                <td>{{ $data2->total }}</td>
-                                <td>{{ $data2->status }}</td>
-                                <td width="160px">
+                                <td>{{ $loop->iteration}}</td>
+                                <td>{{ $val->packing_code}}</td>
+                                <td>{{ $val->packing_date }}</td>
+                                <td>{{ $val->packed_by }}</td>
+                                <td>{{ $val->hotel_code }}</td>
+                                <td>{{ $val->hotel_name }}</td>
+                                <td>{{ $val->total }}</td>
+                                <td>{{ $val->status }}</td>
+                                <td>
                                     <form action="" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a type="button" class="btn btn-success" href="">Edit</a>
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">Hapus</button>
+                                        <a class="btn bg-warning" href="">
+                                          <i class="fas fa-edit"></i>
+                                          </a>
+                                        <a type="submit" class="btn bg-danger"
+                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
+                                          <i class="fas fa-trash"></i>
+                                        </a>
                                         </div>
                                     </form>
                                 </td>

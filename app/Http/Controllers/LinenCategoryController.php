@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LinenCategory;
 use Illuminate\Http\Request;
 
 class LinenCategoryController extends Controller
 {
     public function index(Type $var = null)
     {
-        # code...
+        $data = LinenCategory::all();
+
+        return view('menu_linen/linen_category/index', compact('data'));
     }
 
     public function create(Type $var = null)

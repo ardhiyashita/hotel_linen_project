@@ -10,8 +10,8 @@ class CobaController extends Controller
     public function coba(Type $var = null)
     {
         $data = CleanLinen::all();
-        $data2 = CleanLinen::where('hotel_name', 'adipura 2')->first();
-        // dd($data2);
+        $val = CleanLinen::where('hotel_name', 'adipura 2')->first();
+        // dd($val);
         return view('coba', compact('data2'));
     }
 }
