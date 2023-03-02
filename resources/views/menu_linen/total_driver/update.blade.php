@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Create Driver')
+@section('title', 'Update Driver')
 
 @section('content')
 
@@ -13,19 +13,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Driver</h1>
+            <h1>Update Driver</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Create Driver</li>
+              <li class="breadcrumb-item active">Update Driver</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{ route('driver_create_save') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('driver_create_save', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- Main content -->
     <section class="content">
@@ -40,7 +40,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             Driver ID
-                            <input class="form-control form-control-sm" name="driver_id" type="text" placeholder="-- Driver ID --">
+                            <input class="form-control form-control-sm" name="driver_id" type="text" placeholder="-- Driver ID --" value="{{ $data->driver_id }}">
                         </div>    
                         @error('driver_id')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             First Name
-                            <input class="form-control form-control-sm" name="first_name" type="text" placeholder="-- First Name --">
+                            <input class="form-control form-control-sm" name="first_name" type="text" placeholder="-- First Name --" value="{{ $data->first_name }}">
                         </div>
                         @error('first_name')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -56,7 +56,7 @@
 
                         <div class="form-group">
                             Last Name
-                            <input class="form-control form-control-sm" name="last_name" type="text" placeholder="-- Last Name --">
+                            <input class="form-control form-control-sm" name="last_name" type="text" placeholder="-- Last Name --" value="{{ $data->last_name }}">
                         </div>
                         @error('last_name')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -64,7 +64,7 @@
 
                         <div class="form-group">
                             Gender
-                            <input class="form-control form-control-sm" name="gender" type="text" placeholder="-- Gender --">
+                            <input class="form-control form-control-sm" name="gender" type="text" placeholder="-- Gender --" value="{{ $data->gender }}">
                         </div>
                         @error('gender')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -74,7 +74,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             Phone
-                            <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --">
+                            <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --" value="{{ $data->phone }}">
                         </div>    
                         @error('phone')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -83,11 +83,16 @@
                         <div class="form-group">
                             Laundry Plant
                             <select class="selectpicker form-control form-control-sm" name="laundry_plant" id="laundry_plant" data-live-search="true">
-                            <option>-- Select Laundry Plant --</option>
                                 @foreach($laundry_plant as $item)
-                                <option value="{{ $item->id_laundry_plant }}">{{ $item->name }}</option>
-                            @endforeach
-                        </select>
+                                    <option value="{{ $data->id_laundry_plant }}"
+                                        @if($data->id_laundry_plant == $item->id_laundry_plant)
+                                            {{'selected="selected"'}}
+                                        @endif
+                                        >
+                                        {{ $item->name }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                         @error('laundry_plant')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
@@ -96,7 +101,6 @@
                         <div class="form-group">
                             Company
                             <select class="selectpicker form-control form-control-sm" name="company" id="number" data-live-search="true">
-                            <option>-- Select Company --</option>
                                 <option value="Company Laundry"> Company Laundry </option>
                         </select>
                         </div>
@@ -106,7 +110,7 @@
 
                         <div class="form-group">
                             Note
-                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --"></textarea>
+                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --" value="{{ $data->note }}"></textarea>
                         </div>
                     </div>
 
@@ -129,7 +133,7 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-    </form>
+    </form>    
   </div>
 
   <!-- /.control-sidebar -->

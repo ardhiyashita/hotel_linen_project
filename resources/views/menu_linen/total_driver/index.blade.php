@@ -73,10 +73,10 @@
                                 <td>{{ $val->gender }}</td>
                                 <td>{{ $val->phone }}</td>
                                 <td>
-                                    <form action="" method="POST">
+                                    <form action="{{ route('driver_delete', $val->id) }}" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a class="btn bg-warning" href="">
+                                        <a class="btn bg-warning" href="{{ route('driver_update', $val->id) }}">
                                           <i class="fas fa-edit"></i>
                                           </a>
                                         <a type="submit" class="btn bg-danger"
