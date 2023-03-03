@@ -128,7 +128,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('/driver_create_save', 'create_save')->name('driver_create_save');   
         Route::get('/driver_read', 'read')->name('driver_read');
         Route::get('/driver_update/{id}', 'update')->name('driver_update');        
-        Route::post('/driver_update_save', 'update_save')->name('driver_update_save');        
+        Route::post('/driver_update_save/{id}', 'update_save')->name('driver_update_save');        
         Route::post('/driver_delete/{id}', 'delete')->name('driver_delete');
     });
 

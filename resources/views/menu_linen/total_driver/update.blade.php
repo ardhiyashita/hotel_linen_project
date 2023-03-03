@@ -25,7 +25,7 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{ route('driver_create_save', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('driver_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- Main content -->
     <section class="content">

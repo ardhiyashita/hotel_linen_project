@@ -61,16 +61,31 @@ class DriverController extends Controller
 
     public function update_save(Request $request, $id)
     {
+
+        // dd($request);
+        $value = $request->validate([
+            'driver_id' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'phone' => 'required',
+            'laundry_plant' => 'required',
+            'company' => 'required',
+            ]);
+
         $data = Driver::find($id);
+        $laundry_plant = LaundryPlant::where('id_laundry_plant', '=', $data->id_laundry_plant)->first();        
+        // dd($laundry_plant);
 
         $data->driver_id = $request->driver_id;
+        $data->id_laundry_plant = $request->laundry_plant;
         $data->first_name = $request->first_name;
         $data->last_name = $request->last_name;
         $data->gender = $request->gender;
         $data->phone = $request->phone;
-        $data->laundry_plant = $request->laundry_plant;
+        $data->laundry_plant = $laundry_plant->name;
         $data->company = $request->company;
-
+        $data->note = $request->note;
         $data->save();
 
         return redirect()->back();
