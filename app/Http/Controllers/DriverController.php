@@ -38,6 +38,7 @@ class DriverController extends Controller
         $laundry_plant_id = LaundryPlant::where('id_laundry_plant', '=', $request->laundry_plant)->first();
 
         Driver::create([
+            // 'id' => Str::uuid(),
             'id_laundry_plant' => $request->laundry_plant,
             'driver_id' => $request->driver_id,
             'first_name' => $request->first_name,
@@ -93,8 +94,7 @@ class DriverController extends Controller
 
     public function delete($id)
     {
-
-
+        // dd($id);
         Driver::find($id)->delete();
         return redirect()->back();
     }
