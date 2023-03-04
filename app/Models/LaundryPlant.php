@@ -21,4 +21,9 @@ class LaundryPlant extends Model
     {
         return $this->belongsTo(LinenCenterDetail::class, 'id_linen_center', 'id_linen_center');
     }
+
+    // public function driver()
+    // {
+    //     return $this->hasMany(Driver::class, 'id_driver');
+    // }
 }

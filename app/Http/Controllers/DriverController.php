@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 class DriverController extends Controller
 {
-    public function index(Type $var = null)
+    public function index()
     {
         $data = Driver::all();
         return view('menu_linen/total_driver/index', compact('data'));
     }
 
-    public function create(Type $var = null)
+    public function create()
     {
         $laundry_plant = LaundryPlant::all();
         return view('menu_linen/total_driver/create', compact('laundry_plant'));
@@ -37,6 +37,7 @@ class DriverController extends Controller
         $laundry_plant_id = LaundryPlant::where('id_laundry_plant', '=', $request->laundry_plant)->first();
 
         Driver::create([
+            // 'id' => Str::uuid(),
             'id_laundry_plant' => $request->laundry_plant,
             'driver_id' => $request->driver_id,
             'first_name' => $request->first_name,
@@ -93,7 +94,8 @@ class DriverController extends Controller
 
     public function delete($id)
     {
-        Product::find($id)->delete();
+        // dd($id);
+        Driver::find($id)->delete();
         return redirect()->back();
     }
 
