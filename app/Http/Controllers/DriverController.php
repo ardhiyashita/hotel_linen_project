@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class DriverController extends Controller
 {
-    public function index(Type $var = null)
+    public function index()
     {
         $data = Driver::all();
+        // dd($data);
         return view('menu_linen/total_driver/index', compact('data'));
     }
 
-    public function create(Type $var = null)
+    public function create()
     {
         $laundry_plant = LaundryPlant::all();
         return view('menu_linen/total_driver/create', compact('laundry_plant'));
@@ -23,13 +24,13 @@ class DriverController extends Controller
     public function create_save(Request $request)
     {
         $value = $request->validate([
-        'driver_id' => 'required',
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'gender' => 'required',
-        'phone' => 'required',
-        'laundry_plant' => 'required',
-        'company' => 'required',
+            'driver_id' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'phone' => 'required',
+            'laundry_plant' => 'required',
+            'company' => 'required',
         ]);
 
         // $data = Driver::create($value);
@@ -48,7 +49,6 @@ class DriverController extends Controller
         ]);
 
         return redirect()->back();
-        
     }
 
     public function update($id)
@@ -71,10 +71,10 @@ class DriverController extends Controller
             'phone' => 'required',
             'laundry_plant' => 'required',
             'company' => 'required',
-            ]);
+        ]);
 
         $data = Driver::find($id);
-        $laundry_plant = LaundryPlant::where('id_laundry_plant', '=', $data->id_laundry_plant)->first();        
+        $laundry_plant = LaundryPlant::where('id_laundry_plant', '=', $data->id_laundry_plant)->first();
         // dd($laundry_plant);
 
         $data->driver_id = $request->driver_id;
@@ -93,8 +93,9 @@ class DriverController extends Controller
 
     public function delete($id)
     {
-        Product::find($id)->delete();
+
+
+        Driver::find($id)->delete();
         return redirect()->back();
     }
-
 }
