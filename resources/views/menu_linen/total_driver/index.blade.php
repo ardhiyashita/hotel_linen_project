@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('driver_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('driver_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>

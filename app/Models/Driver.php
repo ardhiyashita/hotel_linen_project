@@ -14,7 +14,7 @@ class Driver extends Model
     // protected $guards = [];
     protected $table = 'tb_driver';
     // protected $timestamp = false;
-    protected $fillable = ['id_driver', 'id_jabatan', 'id_laundry_plant', 'driver_id', 'first_name', 'last_name', 'gender', 'phone', 'laundry_plant', 'company', 'note'];
+    protected $fillable = ['id', 'id_jabatan', 'id_laundry_plant', 'driver_id', 'first_name', 'last_name', 'gender', 'phone', 'laundry_plant', 'company', 'note'];
     // protected $fillable = ['id_laundry_plant'];
 
     public function jabatan()
@@ -24,6 +24,6 @@ class Driver extends Model
 
     public function laundry_plant()
     {
-        return $this->belongsTo(LaundryPlant::class, 'id_laundry_plant', 'id_laundry_plant');
+        return $this->belongsTo(LaundryPlant::class, 'id', 'id_laundry_plant');
     }
 }

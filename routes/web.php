@@ -107,9 +107,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/laundry_plant_create', 'create')->name('laundry_plant_create');
         Route::post('/laundry_plant_create_save', 'create_save')->name('laundry_plant_create_save');
         Route::get('/laundry_plant_read', 'read')->name('laundry_plant_read');
-        Route::get('/laundry_plant_update', 'update')->name('laundry_plant_update');
-        Route::post('/laundry_plant_update_save', 'update_save')->name('laundry_plant_update_save');
-        Route::get('/laundry_plant_delete', 'delete')->name('laundry_plant_delete');
+        Route::get('/laundry_plant_update/{id}', 'update')->name('laundry_plant_update');
+        Route::post('/laundry_plant_update_save/{id}', 'update_save')->name('laundry_plant_update_save');
+        Route::post('/laundry_plant_delete/{id}', 'delete')->name('laundry_plant_delete');
     });
 
     Route::controller(LinenCenterController::class)->group(function () {

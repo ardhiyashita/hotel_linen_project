@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('laundry_plant_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -73,12 +73,12 @@
                                 <td>{{ $val->email }}</td>
                                 <td>{{ $val->linen_center }}</td>
                                 <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
+                                  <form action="{{ route('laundry_plant_delete', $val->id) }}" method="POST">
+                                    <div class="" role="group" aria-label="Basic example">
+                                    @csrf
+                                          <a class="btn bg-warning" href="{{ route('laundry_plant_update', $val->id) }}">
+                                            <i class="fas fa-edit"></i>
+                                            </a>
                                         <a type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_laundry_plant', function (Blueprint $table) {
-            $table->integer('id_laundry_plant', true);
+            $table->integer('id', true);
             $table->integer('id_jabatan')->default(3)->index('FK_tb_laundry_plant');
             $table->integer('id_linen_center')->index('FK_tb_laundry_plant_linen_center');
             $table->string('name', 50);

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_linen_center_detail', function (Blueprint $table) {
-            $table->integer('id_linen_center_detail', true);
+            $table->integer('id', true);
             $table->integer('id_jabatan')->default(3)->index('FK_tb_linen_center_detail');
             $table->string('code', 50);
             $table->string('name', 50);

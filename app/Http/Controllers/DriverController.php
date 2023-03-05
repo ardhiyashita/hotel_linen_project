@@ -35,7 +35,7 @@ class DriverController extends Controller
 
         // $data = Driver::create($value);
 
-        $laundry_plant_id = LaundryPlant::where('id_laundry_plant', '=', $request->laundry_plant)->first();
+        $laundry_plant_id = LaundryPlant::where('id', '=', $request->laundry_plant)->first();
 
         Driver::create([
             // 'id' => Str::uuid(),
@@ -75,7 +75,7 @@ class DriverController extends Controller
         ]);
 
         $data = Driver::find($id);
-        $laundry_plant = LaundryPlant::where('id_laundry_plant', '=', $data->id_laundry_plant)->first();
+        $laundry_plant = LaundryPlant::where('id', '=', $data->id_laundry_plant)->first();
         // dd($laundry_plant);
 
         $data->driver_id = $request->driver_id;
