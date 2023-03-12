@@ -79,10 +79,10 @@
                                           <a class="btn bg-warning" href="{{ route('laundry_plant_update', $val->id) }}">
                                             <i class="fas fa-edit"></i>
                                             </a>
-                                        <a type="submit" class="btn bg-danger"
+                                        <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
                                         </div>
                                     </form>
                                 </td>

@@ -16,4 +16,9 @@ class LinenCenterDetail extends Model
     {
         return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id_jabatan');
     }
+
+    public function linen_center()
+    {
+        return $this->belongsTo(LinenCenterDetail::class, 'id', 'id');
+    }
 }

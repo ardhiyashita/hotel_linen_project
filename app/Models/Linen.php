@@ -17,18 +17,18 @@ class Linen extends Model
         return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id_jabatan');
     }
 
-    public function template()
+    public function total_template()
     {
-        return $this->belongsTo(Template::class, 'id_template', 'id_template');
+        return $this->belongsTo(Template::class, 'id_template', 'id');
     }
 
-    public function supplier()
+    public function total_supplier()
     {
-        return $this->belongsTo(Supplier::class, 'id_supplier', 'id_supplier');
+        return $this->belongsTo(Supplier::class, 'id_supplier', 'id');
     }
 
-    public function hotel()
+    public function total_hotel()
     {
-        return $this->belongsTo(Hotel::class, 'id_hotel', 'id_hotel');
+        return $this->belongsTo(Hotel::class, 'id_hotel', 'id');
     }
 }

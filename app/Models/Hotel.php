@@ -19,6 +19,6 @@ class Hotel extends Model
 
     public function laundry_plant()
     {
-        return $this->belongsTo(LaundryPlant::class, 'id_laundry_plant', 'id_laundry_plant');
+        return $this->belongsTo(LaundryPlant::class, 'id', 'id_laundry_plant');
     }
 }

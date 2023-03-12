@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('linen_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -47,13 +47,12 @@
                                 <th class="border-top-0" style="text-align: center">Tag id</th>
                                 <th class="border-top-0" style="text-align: center">Name</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
-                                <th class="border-top-0" style="text-align: center">Price</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
-                                <th class="border-top-0" style="text-align: center">Linen code</th>
-                                <th class="border-top-0" style="text-align: center">Linen type</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Type</th>
                                 <th class="border-top-0" style="text-align: center">Template</th>
                                 <th class="border-top-0" style="text-align: center">Supplier</th>
-                                <th class="border-top-0" style="text-align: center">Linen status</th>
+                                <th class="border-top-0" style="text-align: center">Status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
@@ -63,13 +62,12 @@
                                 <th class="border-top-0" style="text-align: center">Tag id</th>
                                 <th class="border-top-0" style="text-align: center">Name</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
-                                <th class="border-top-0" style="text-align: center">Price</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
-                                <th class="border-top-0" style="text-align: center">Linen code</th>
-                                <th class="border-top-0" style="text-align: center">Linen type</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Type</th>
                                 <th class="border-top-0" style="text-align: center">Template</th>
                                 <th class="border-top-0" style="text-align: center">Supplier</th>
-                                <th class="border-top-0" style="text-align: center">Linen status</th>
+                                <th class="border-top-0" style="text-align: center">Status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
@@ -78,26 +76,25 @@
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
                                 <td>{{ $val->tag_id}}</td>
-                                <td>{{ $val->name }}</td>
-                                <td>{{ $val->size }}</td>
-                                <td>{{ $val->price }}</td>
-                                <td>{{ $val->color }}</td>
-                                <td>{{ $val->linen_code }}</td>
-                                <td>{{ $val->linen_type }}</td>
-                                <td>{{ $val->template }}</td>
-                                <td>{{ $val->supplier }}</td>
+                                <td>{{ $val->linen_name }}</td>
+                                <td>{{ $val->total_template->size }}</td>
+                                <td>{{ $val->total_template->color }}</td>
+                                <td>{{ $val->total_template->linen_code }}</td>
+                                <td>{{ $val->total_template->linen_type }}</td>
+                                <td>{{ $val->total_template->template_name }}</td>
+                                <td>{{ $val->total_template->supplier }}</td>
                                 <td>{{ $val->linen_status }}</td>
                                 <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
-                                        <a type="submit" class="btn bg-danger"
+                                  <form action="{{ route('linen_delete', $val->id) }}" method="POST">
+                                    <div class="" role="group" aria-label="Basic example">
+                                    @csrf
+                                          <a class="btn bg-warning" href="{{ route('linen_update', $val->id) }}">
+                                            <i class="fas fa-edit"></i>
+                                            </a>
+                                        <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
                                         </div>
                                     </form>
                                 </td>

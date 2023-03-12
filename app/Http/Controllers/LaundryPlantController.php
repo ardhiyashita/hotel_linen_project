@@ -77,16 +77,16 @@ class LaundryPlantController extends Controller
         ]);
 
         $data = LaundryPlant::find($id);
-        $linen_center = LinenCenterDetail::where('id', '=', $data->id)->first();
-        // dd($laundry_plant);
+        $linen_center = LinenCenterDetail::where('id', '=', $data->id_linen_center)->first();
+        //dd($linen_center);
 
-        $data->id = $request->linen_center;
+        $data->id_linen_center = $request->linen_center;
         $data->name = $request->name;
         $data->code = $request->code;
         $data->phone = $request->phone;
         $data->address = $request->address;
         $data->email = $request->email;
-        $data->linen_center = $request->linen_center->name;
+        $data->linen_center = $linen_center->name;
         $data->description = $request->description;
         $data->save();
 

@@ -32,12 +32,6 @@
           <div class="col-12">
 
             <div class="card">
-              <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
-                  <i class="mr-1 fas fa-plus">
-                  </i>
-                  Add Data</a>
-              </div>
               <!-- /.card-header -->
               <div class="card-body">             
                 <table id="example1" class="table table-bordered table-striped">
@@ -76,18 +70,9 @@
                                 <td>{{ $val->total_packing }}</td>
                                 <td>{{ $val->delivery_status }}</td>
                                 <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
-                                        <a type="submit" class="btn bg-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
-                                          <i class="fas fa-trash"></i>
-                                        </a>
-                                        </div>
-                                    </form>
+                                  <a class="btn bg-success" href="{{ route('internal_transaction_read', $val->id) }}">
+                                    <i class="fas fa-eye"></i>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

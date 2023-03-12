@@ -46,13 +46,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('laundry_plant_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laundry Plant</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('driver_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Driver</p>
                 </a>
@@ -71,13 +71,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Group Hotel</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('hotel_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Hotel</p>
                 </a>
@@ -96,19 +96,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('linen_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Linen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('check_linen_status_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Check Linen Status</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('register_linen_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Register History</p>
                 </a>
@@ -133,25 +133,25 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('internal_transaction_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Internal Trasaction</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Internal Reject</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Packing</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Transfer</p>
                 </a>
@@ -195,25 +195,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('template_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Template</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('linen_category_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Linen Category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('linen_type_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Linen Type</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('supplier_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Supplier</p>
                 </a>

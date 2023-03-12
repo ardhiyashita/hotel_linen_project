@@ -12,6 +12,6 @@ class CobaController extends Controller
         $data = CleanLinen::all();
         $val = CleanLinen::where('hotel_name', 'adipura 2')->first();
         // dd($val);
-        return view('coba', compact('data2'));
+        return view('coba', compact('data'));
     }
 }

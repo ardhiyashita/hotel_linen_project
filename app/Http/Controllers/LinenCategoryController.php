@@ -7,31 +7,71 @@ use Illuminate\Http\Request;
 
 class LinenCategoryController extends Controller
 {
-    public function index(Type $var = null)
+    public function index()
     {
         $data = LinenCategory::all();
 
-        return view('menu_linen/linen_category/index', compact('data'));
+        return view('sidebar_linen/preset/linen_category/index', compact('data'));
     }
 
-    public function create(Type $var = null)
+    public function create()
     {
-        return view('menu_linen/linen_category/create');
+        $data = LinenCategory::all();
+        return view('sidebar_linen/preset/linen_category/create', compact('data'));
     }
 
-    public function read(Type $var = null)
+    public function create_save(Request $request)
     {
-        # code...
+        //dd($request);
+        $value = $request->validate([
+            'linen_code' => 'required',
+            'linen_name' => 'required',
+            'description' => 'required',
+        ]);
+
+        // $data = Driver::create($value);
+
+        LinenCategory::create([
+            // 'id' => Str::uuid(),
+            'linen_code' => $request->linen_code,
+            'linen_name' => $request->linen_name,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->back();
     }
 
-    public function update(Type $var = null)
+    public function update($id)
     {
-        # code...
+        $data = LinenCategory::find($id);
+        $linen_center = LinenCategory::all();
+        return view('sidebar_linen/preset/linen_category/update', compact('data'));
     }
 
-    public function delete(Type $var = null)
+    public function update_save(Request $request, $id)
     {
-        # code...
+
+        // dd($request);
+        $value = $request->validate([
+            'linen_code' => 'required',
+            'linen_name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $data = LinenCategory::find($id);
+
+        $data->linen_code = $request->linen_code;
+        $data->linen_name = $request->linen_name;
+        $data->description = $request->description;
+        $data->save();
+
+        return redirect()->back();
     }
 
+    public function delete($id)
+    {
+        // dd($id);
+        LinenCategory::find($id)->delete();
+        return redirect()->back();
+    }
 }
