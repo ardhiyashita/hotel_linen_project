@@ -98,4 +98,10 @@ class DriverController extends Controller
         Driver::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = Driver::find($id);
+        return view('menu_linen/total_driver/read', compact('data'));
+    }
 }
