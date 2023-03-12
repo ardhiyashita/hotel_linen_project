@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Update Laundry Plant')
+@section('title', 'Create Linen')
 
 @section('content')
 
@@ -13,19 +13,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Update Laundry Plant</h1>
+            <h1>Create Linen</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Update Laundry Plant</li>
+              <li class="breadcrumb-item active">Create Linen</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{ route('laundry_plant_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('linen_create_save') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- Main content -->
     <section class="content">
@@ -39,74 +39,75 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
-                            Name
-                            <input class="form-control form-control-sm" name="name" type="text" placeholder="-- Name --" value="{{ $data->name }}">
+                            Driver ID
+                            <input class="form-control form-control-sm" name="driver_id" type="text" placeholder="-- Driver ID --">
                         </div>    
-                        @error('name')
+                        @error('driver_id')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Code
-                            <input class="form-control form-control-sm" name="code" type="text" placeholder="-- Code --" value="{{ $data->code }}">
+                            First Name
+                            <input class="form-control form-control-sm" name="first_name" type="text" placeholder="-- First Name --">
                         </div>
-                        @error('code')
+                        @error('first_name')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
+                        <div class="form-group">
+                            Last Name
+                            <input class="form-control form-control-sm" name="last_name" type="text" placeholder="-- Last Name --">
+                        </div>
+                        @error('last_name')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                            Gender
+                            <input class="form-control form-control-sm" name="gender" type="text" placeholder="-- Gender --">
+                        </div>
+                        @error('gender')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             Phone
-                            <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --" value="{{ $data->phone }}">
-                        </div>
+                            <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --">
+                        </div>    
                         @error('phone')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                          Address
-                          <input class="form-control form-control-sm" name="address" type="text" placeholder="-- address --" value="{{ $data->address }}">
-                      </div>
-                      @error('address')
-                      <div class="alert alert-danger" role="alert">{{$message}}</div>
-                      @enderror
-                        
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                      
-                        <div class="form-group">
-                            Email
-                            <input class="form-control form-control-sm" name="email" type="text" placeholder="-- Email --" value="{{ $data->email }}">
-                        </div>    
-                        @error('email')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
-                        @enderror
-
-                        <div class="form-group">
-                            Linen Center
-                            <select class="selectpicker form-control form-control-sm" name="linen_center" id="linen_center" data-live-search="true">
-                                @foreach($linen_center as $item)
-                                    <option value="{{ $data->id }}"
-                                        @if($data->id_linen_center == $item->id)
-                                            {{'selected="selected"'}}
-                                        @endif
-                                        >
-                                        {{ $item->name }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            Laundry Plant
+                            <select class="selectpicker form-control form-control-sm" name="laundry_plant" id="laundry_plant" data-live-search="true">
+                            <option>-- Select Laundry Plant --</option>
+                                @foreach($laundry_plant as $item)
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select>
                         </div>
-                        @error('linen_center')
+                        @error('laundry_plant')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                          Description
-                          <input class="form-control form-control-sm" name="description" type="text" placeholder="-- description --" value="{{ $data->description }}">
-                      </div>
-                      @error('description')
-                      <div class="alert alert-danger" role="alert">{{$message}}</div>
-                      @enderror
+                            Company
+                            <select class="selectpicker form-control form-control-sm" name="company" id="number" data-live-search="true">
+                            <option>-- Select Company --</option>
+                                <option value="Company Laundry"> Company Laundry </option>
+                        </select>
+                        </div>
+                        @error('company')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
 
+                        <div class="form-group">
+                            Note
+                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --"></textarea>
+                        </div>
                     </div>
 
                     <div class="col-sm-12 col-md-6">
@@ -114,12 +115,12 @@
                             <i class="mr-1 fas fa-save"></i>
                             Save
                         </button>
-                        <a href="{{ route('laundry_plant_index') }}" class="btn bg-primary" style="width: 200px;">
+                        <a href="{{ route('linen_index') }}" class="btn bg-primary" style="width: 200px;">
                           <i class="mr-1 fa fa-arrow-left"></i>
                           Back
                         </a>
-                        
                     </div>
+
                 </div>
               </div>
               <!-- /.card-body -->
@@ -133,7 +134,7 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-    </form>    
+    </form>
   </div>
 
   <!-- /.control-sidebar -->

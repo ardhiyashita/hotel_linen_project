@@ -16,5 +16,9 @@ class LinenCategory extends Model
     {
         return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id_jabatan');
     }
-    
+
+    public function linen_category()
+    {
+        return $this->belongsTo(LLinenCategory::class, 'id', 'id');
+    }
 }

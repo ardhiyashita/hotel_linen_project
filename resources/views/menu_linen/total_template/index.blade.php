@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Total Template Linen</h1>
+            <h1>Total Linen Template </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Total Template Linen</li>
+              <li class="breadcrumb-item active">Total Linen</li>
             </ol>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('template_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -44,9 +44,8 @@
                 <thead style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen code</th>
+                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen type</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
@@ -57,9 +56,8 @@
                         <tfoot style="font-size: 12px;">
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen code</th>
+                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen type</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
@@ -71,24 +69,23 @@
                             @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->code}}</td>
+                                <td>{{ $val->linen_code}}</td>
                                 <td>{{ $val->template_name }}</td>
-                                <td>{{ $val->linen_code }}</td>
                                 <td>{{ $val->linen_type }}</td>
                                 <td>{{ $val->size }}</td>
                                 <td>{{ $val->color }}</td>
                                 <td>{{ $val->supplier }}</td>
                                 <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
-                                        <a type="submit" class="btn bg-danger"
+                                  <form action="{{ route('template_delete', $val->id) }}" method="POST">
+                                    <div class="" role="group" aria-label="Basic example">
+                                    @csrf
+                                          <a class="btn bg-warning" href="{{ route('template_update', $val->id) }}">
+                                            <i class="fas fa-edit"></i>
+                                            </a>
+                                        <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
                                         </div>
                                     </form>
                                 </td>

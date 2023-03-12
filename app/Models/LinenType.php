@@ -19,6 +19,6 @@ class LinenType extends Model
 
     public function linen_category()
     {
-        return $this->belongsTo(LinenCategory::class, 'id_linen_category', 'id_linen_category');
+        return $this->belongsTo(LinenCategory::class, 'id', 'id_linen_category');
     }
 }

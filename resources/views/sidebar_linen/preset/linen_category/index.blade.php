@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'User')
+@section('title', 'Linen Category')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>User</h1>
+            <h1>Linen Category</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">User</li>
+              <li class="breadcrumb-item active">Linen Category</li>
             </ol>
           </div>
         </div>
@@ -33,56 +33,50 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                    <table class="table table-bordered" id="table" width="100%" cellspacing="0">
-                        <thead style="font-size: 12px;">
+              <div class="card-body">             
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">First Name</th>
-                                <th class="border-top-0" style="text-align: center">Last Name</th>
-                                <th class="border-top-0" style="text-align: center">Linen Center</th>
-                                <th class="border-top-0" style="text-align: center">Laundry Plant</th>
-                                <th class="border-top-0" style="text-align: center">Email</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Description</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="font-size: 12px;">
+                        <tfoot>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">First Name</th>
-                                <th class="border-top-0" style="text-align: center">Last Name</th>
-                                <th class="border-top-0" style="text-align: center">Linen Center</th>
-                                <th class="border-top-0" style="text-align: center">Laundry Plant</th>
-                                <th class="border-top-0" style="text-align: center">Email</th>
+                                <th class="border-top-0" style="text-align: center">Code</th>
+                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Description</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($val as $val)
+                            @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->first_name}}</td>
-                                <td>{{ $val->last_name }}</td>
-                                <td>{{ $val->linen_center }}</td>
-                                <td>{{ $val->laundry_plant }}</td>
-                                <td>{{ $val->email }}</td>
+                                <td>{{ $val->linen_code}}</td>
+                                <td>{{ $val->linen_name }}</td>
+                                <td>{{ $val->description }}</td>
                                 <td>
-                                    <form action="" method="POST">
+                                    <form action="{{ route('linen_category_delete', $val->id) }}" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a class="btn bg-warning" href="">
+                                        <a class="btn bg-warning" href="{{ route('linen_category_update', $val->id) }}">
                                           <i class="fas fa-edit"></i>
                                           </a>
-                                        <a type="submit" class="btn bg-danger"
+                                        <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
                                         </div>
                                     </form>
                                 </td>

@@ -19,11 +19,11 @@ class HotelTransaction extends Model
 
     public function packed()
     {
-        return $this->belongsTo(Packed::class, 'id_packed', 'id_packed');
+        return $this->belongsTo(Packed::class, 'id', 'id_packed');
     }
 
     public function clean_linen()
     {
-        return $this->belongsTo(Packed::class, 'id_clean_linen', 'id_clean_linen');
+        return $this->belongsTo(Packed::class, 'id', 'id_clean_linen');
     }
 }

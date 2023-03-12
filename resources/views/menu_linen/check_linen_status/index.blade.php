@@ -32,12 +32,6 @@
           <div class="col-12">
 
             <div class="card">
-              <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
-                  <i class="mr-1 fas fa-plus">
-                  </i>
-                  Add Data</a>
-              </div>
               <!-- /.card-header -->
               <div class="card-body">             
                 <table id="example1" class="table table-bordered table-striped">
@@ -52,7 +46,6 @@
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Current wash cycle</th>
                                 <th class="border-top-0" style="text-align: center">Linen belong LC</th>
-                                <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
                         <tfoot style="font-size: 12px;">
@@ -66,7 +59,6 @@
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Current wash cycle</th>
                                 <th class="border-top-0" style="text-align: center">Linen belong LC</th>
-                                <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody style="font-size: 12px;">
@@ -76,25 +68,12 @@
                                 <td>{{ $val->tag_id}}</td>
                                 <td>{{ $val->place }}</td>
                                 <td>{{ $val->linen_status }}</td>
-                                <td>{{ $val->linen_type }}</td>
-                                <td>{{ $val->hotel_name }}</td>
-                                <td>{{ $val->size }}</td>
+                                <td>{{ $val->total_template->linen_type }}</td>
+                                <td>{{ $val->total_hotel->hotel_name }}</td>
+                                <td>{{ $val->total_template->size }}</td>
                                 <td>{{ $val->current_wash_cycle }}</td>
-                                <td>{{ $val->linen_belong_lc }}</td>
-                                <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
-                                        <a type="submit" class="btn bg-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
-                                          <i class="fas fa-trash"></i>
-                                        </a>
-                                        </div>
-                                    </form>
-                                </td>
+                                <td>{{ $val->linen_belong }}</td>
+                                
                             </tr>
                             @endforeach
                         </tbody>

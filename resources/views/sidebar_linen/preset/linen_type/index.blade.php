@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Total Template Linen')
+@section('title', 'Linen Type')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Total Template Linen</h1>
+            <h1>Linen Type</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Total Template Linen</li>
+              <li class="breadcrumb-item active">Linen Type</li>
             </ol>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
+              <a href="{{ route('linen_type_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -41,62 +41,61 @@
               <!-- /.card-header -->
               <div class="card-body">             
                 <table id="example1" class="table table-bordered table-striped">
-                <thead style="font-size: 12px;">
+                <thead>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen code</th>
                                 <th class="border-top-0" style="text-align: center">Linen type</th>
+                                <th class="border-top-0" style="text-align: center">Linen category</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
-                                <th class="border-top-0" style="text-align: center">Supplier</th>
+                                <th class="border-top-0" style="text-align: center">Max cycle</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="font-size: 12px;">
+                        <tfoot>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Template name</th>
                                 <th class="border-top-0" style="text-align: center">Linen code</th>
                                 <th class="border-top-0" style="text-align: center">Linen type</th>
+                                <th class="border-top-0" style="text-align: center">Linen category</th>
                                 <th class="border-top-0" style="text-align: center">Size</th>
                                 <th class="border-top-0" style="text-align: center">Color</th>
-                                <th class="border-top-0" style="text-align: center">Supplier</th>
+                                <th class="border-top-0" style="text-align: center">Max cycle</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
-                        <tbody style="font-size: 12px;">
+                        <tbody>
                             @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->code}}</td>
-                                <td>{{ $val->template_name }}</td>
-                                <td>{{ $val->linen_code }}</td>
+                                <td>{{ $val->linen_code}}</td>
                                 <td>{{ $val->linen_type }}</td>
+                                <td>{{ $val->linen_category }}</td>
                                 <td>{{ $val->size }}</td>
                                 <td>{{ $val->color }}</td>
-                                <td>{{ $val->supplier }}</td>
+                                <td>{{ $val->max_cycle }}</td>
                                 <td>
-                                    <form action="" method="POST">
+                                    <form action="{{ route('linen_type_delete', $val->id) }}" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a class="btn bg-warning" href="">
+                                        <a class="btn bg-warning" href="{{ route('linen_type_update', $val->id) }}">
                                           <i class="fas fa-edit"></i>
                                           </a>
-                                        <a type="submit" class="btn bg-danger"
+                                        <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
                                         </div>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                </table>
-              </div>
+                    </table>
+
+
+                    </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
