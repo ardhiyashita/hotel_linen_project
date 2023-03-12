@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Linen Category')
+@section('title', 'Role User')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Linen Category</h1>
+            <h1>Role User</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Linen Category</li>
+              <li class="breadcrumb-item active">Role User</li>
             </ol>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 200px;"> 
+              <a href="{{ route('role_user_create') }}" class="btn bg-primary" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -44,8 +44,7 @@
                 <thead>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Role</th>
                                 <th class="border-top-0" style="text-align: center">Description</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
@@ -53,8 +52,7 @@
                         <tfoot>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Code</th>
-                                <th class="border-top-0" style="text-align: center">Name</th>
+                                <th class="border-top-0" style="text-align: center">Role</th>
                                 <th class="border-top-0" style="text-align: center">Description</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
@@ -63,16 +61,21 @@
                             @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->linen_code}}</td>
-                                <td>{{ $val->linen_name }}</td>
+                                <td>{{ $val->role}}</td>
                                 <td>{{ $val->description }}</td>
                                 <td>
-                                    <form action="{{ route('linen_category_delete', $val->id) }}" method="POST">
+                                    <form action="{{ route('role_user_delete', $val->id) }}" method="POST">
                                         <div class="" role="group" aria-label="Basic example">
                                         @csrf
-                                        <a class="btn bg-warning" href="{{ route('linen_category_update', $val->id) }}">
-                                          <i class="fas fa-edit"></i>
-                                          </a>
+                                        
+                                        <a class="btn bg-warning" href="{{ route('role_user_update', $val->id) }}">
+                                            <i class="fas fa-edit"></i>
+                                            </a>
+                                        
+                                          <a class="btn bg-success" href="{{ route('role_user_read', $val->id) }}">
+                                            <i class="fas fa-eye"></i>
+                                            </a>
+                                        
                                         <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>

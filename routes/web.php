@@ -18,6 +18,8 @@ use App\Http\Controllers\RegisterLinenController;
 use App\Http\Controllers\CheckLinenStatusController;
 use App\Http\Controllers\HotelTransactionController;
 use App\Http\Controllers\InternalTransactionController;
+use App\Http\Controllers\RoleUserController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -159,6 +161,26 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/supplier_update/{id}', 'update')->name('supplier_update');
         Route::post('/supplier_update_save/{id}', 'update_save')->name('supplier_update_save');
         Route::post('/supplier_delete/{id}', 'delete')->name('supplier_delete');
+    });
+
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/user_index', 'index')->name('user_index');
+        Route::get('/user_create', 'create')->name('user_create');
+        Route::post('/user_create_save', 'create_save')->name('user_create_save');
+        Route::get('/user_read', 'read')->name('user_read');
+        Route::get('/user_update/{id}', 'update')->name('user_update');
+        Route::post('/user_update_save/{id}', 'update_save')->name('user_update_save');
+        Route::post('/user_delete/{id}', 'delete')->name('user_delete');
+    });
+
+    Route::controller(RoleUserController::class)->group(function () {
+        Route::get('/role_user_index', 'index')->name('role_user_index');
+        Route::get('/role_user_create', 'create')->name('role_user_create');
+        Route::post('/role_user_create_save', 'create_save')->name('role_user_create_save');
+        Route::get('/role_user_read', 'read')->name('role_user_read');
+        Route::get('/role_user_update/{id}', 'update')->name('role_user_update');
+        Route::post('/role_user_update_save/{id}', 'update_save')->name('role_user_update_save');
+        Route::post('/role_user_delete/{id}', 'delete')->name('role_user_delete');
     });
 });
 
