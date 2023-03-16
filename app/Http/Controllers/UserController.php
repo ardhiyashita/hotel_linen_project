@@ -93,4 +93,10 @@ class UserController extends Controller
         UserPegawai::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = UserPegawai::find($id);
+        return view('sidebar_linen/privillage/user/read', compact('data'));
+    }
 }

@@ -79,4 +79,10 @@ class RoleUserController extends Controller
         RoleUser::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = RoleUser::find($id);
+        return view('sidebar_linen/privillage/role_user/read', compact('data'));
+    }
 }

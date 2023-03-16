@@ -74,4 +74,10 @@ class LinenCategoryController extends Controller
         LinenCategory::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = LinenCategory::find($id);
+        return view('sidebar_linen/preset/linen_category/read', compact('data'));
+    }
 }

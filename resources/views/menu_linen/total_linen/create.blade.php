@@ -39,75 +39,156 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
-                            Driver ID
-                            <input class="form-control form-control-sm" name="driver_id" type="text" placeholder="-- Driver ID --">
+                            Tag ID
+                            <input class="form-control form-control-sm" name="tag_id" type="text" placeholder="-- tag ID --">
                         </div>    
-                        @error('driver_id')
+                        @error('tag_id')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            First Name
-                            <input class="form-control form-control-sm" name="first_name" type="text" placeholder="-- First Name --">
+                          Template
+                          <select class="selectpicker form-control form-control-sm" name="template" id="template" data-live-search="true">
+                          <option>-- Select Template --</option>
+                              @foreach($template as $item)
+                              <option value="{{ $item->id }}">{{ $item->name }}</option>
+                          @endforeach
+                      </select>
+                      </div>
+                      @error('template')
+                      <div class="alert alert-danger" role="alert">{{$message}}</div>
+                      @enderror
+
+                        <div class="form-group">
+                            Linen Name
+                            <input class="form-control form-control-sm" name="linen_name" type="text" placeholder="-- linen name --">
                         </div>
-                        @error('first_name')
+                        @error('linen_name')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Last Name
-                            <input class="form-control form-control-sm" name="last_name" type="text" placeholder="-- Last Name --">
+                            Size
+                            <input class="form-control form-control-sm" name="size" type="text" placeholder="-- Size --">
                         </div>
-                        @error('last_name')
+                        @error('size')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Gender
-                            <input class="form-control form-control-sm" name="gender" type="text" placeholder="-- Gender --">
+                            Price
+                            <input class="form-control form-control-sm" name="price" type="text" placeholder="-- price --">
                         </div>
-                        @error('gender')
+                        @error('price')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                          Color
+                          <input class="form-control form-control-sm" name="color" type="date" placeholder="-- color --">
+                        </div>    
+                        @error('color')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                          Supplier
+                          <input class="form-control form-control-sm" name="supplier" type="text" placeholder="-- supplier --">
+                        </div>
+                        @error('supplier')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                          Serial number
+                          <input class="form-control form-control-sm" name="serial_number" type="text" placeholder="-- serial number --">
+                        </div>
+                        @error('serial_number')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
                         
                     </div>
+
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
-                            Phone
-                            <input class="form-control form-control-sm" name="phone" type="text" placeholder="-- Phone --">
+                            Year
+                            <input class="form-control form-control-sm" name="year" type="date" placeholder="-- year --">
                         </div>    
-                        @error('phone')
+                        @error('year')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Laundry Plant
-                            <select class="selectpicker form-control form-control-sm" name="laundry_plant" id="laundry_plant" data-live-search="true">
-                            <option>-- Select Laundry Plant --</option>
-                                @foreach($laundry_plant as $item)
+                          Quarter
+                          <input class="form-control form-control-sm" name="quarter" type="text" placeholder="-- quarter --">
+                      </div>
+                      @error('quarter')
+                      <div class="alert alert-danger" role="alert">{{$message}}</div>
+                      @enderror
+
+                        <div class="form-group">
+                            Linen type
+                            <select class="selectpicker form-control form-control-sm" name="linen_type" id="linen_type" data-live-search="true">
+                            <option>-- Select Linen type --</option>
+                                @foreach($linen_type as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
-                        </select>
+                            </select>
                         </div>
-                        @error('laundry_plant')
+                        @error('linen_type')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Company
-                            <select class="selectpicker form-control form-control-sm" name="company" id="number" data-live-search="true">
-                            <option>-- Select Company --</option>
-                                <option value="Company Laundry"> Company Laundry </option>
+                          Linen category
+                          <select class="selectpicker form-control form-control-sm" name="linen_category" id="linen_category" data-live-search="true">
+                          <option>-- Select Linen category --</option>
+                              @foreach($linen_category as $item)
+                              <option value="{{ $item->id }}">{{ $item->name }}</option>
+                          @endforeach
+                      </select>
+                      </div>
+                      @error('linen_category')
+                      <div class="alert alert-danger" role="alert">{{$message}}</div>
+                      @enderror
+
+                      <div class="form-group">
+                        Ownership
+                        <select class="selectpicker form-control form-control-sm" name="ownership" id="ownership" data-live-search="true">
+                        <option>-- Select Ownership --</option>
+                            @foreach($ownership as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
                         </select>
                         </div>
-                        @error('company')
+                        @error('ownership')
                         <div class="alert alert-danger" role="alert">{{$message}}</div>
                         @enderror
 
                         <div class="form-group">
-                            Note
-                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --"></textarea>
+                          Sew by
+                          <input class="form-control form-control-sm" name="sew_by" type="text" placeholder="-- sew by --">
                         </div>
+                        @error('sew_by')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                          Max cycle
+                          <input class="form-control form-control-sm" name="max_cycle" type="text" placeholder="-- max cycle --">
+                        </div>
+                        @error('max_cycle')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
+                        <div class="form-group">
+                          Description
+                          <textarea class="form-control form-control-sm" name="description" type="text" placeholder="-- description --"></textarea>
+                        </div>
+                        @error('description')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
+
                     </div>
 
                     <div class="col-sm-12 col-md-6">

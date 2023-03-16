@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 
 class RegisterLinenController extends Controller
 {
-    public function index(Type $var = null)
+    public function index()
     {
         $data = RegisterHistory::all();
 
         return view('menu_linen/total_register_linen/index', compact('data'));
+    }
+
+    public function read($id)
+    {
+        $data = RegisterHistory::find($id);
+        return view('menu_linen/total_register_linen/read', compact('data'));
     }
 }

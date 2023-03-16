@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Detail Register Linen')
+@section('title', 'Detail Laundry Plant')
 
 @section('content')
 
@@ -13,19 +13,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Detail Register Linen</h1>
+            <h1>Detail Laundry Plant</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Detail Register Linen</li>
+              <li class="breadcrumb-item active">Detail Laundry Plant</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{ route('register_linen_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('hotel_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- Main content -->
     <section class="content">
@@ -40,17 +40,9 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Date</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->register_date }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
                                 <label class="col-sm-12 col-md-3">Code</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->template_code }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->code }}</div>
                             </div>
                         </div>    
                         
@@ -58,15 +50,15 @@
                             <div class="row">
                                 <label class="col-sm-12 col-md-3">Name</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->template_name }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->name }}</div>
                             </div>
                         </div>
                         
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Linen type</label>
+                                <label class="col-sm-12 col-md-3">Address</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->linen_type }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->address }}</div>
                             </div>
                         </div>
                         
@@ -74,40 +66,43 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Total</label>
+                                <label class="col-sm-12 col-md-3">Phone number</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->total }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->phone }}</div>
                             </div>
                         </div>    
                         
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Size</label>
+                                <label class="col-sm-12 col-md-3">Email</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->size }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Supplier</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->supplier }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Color</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->color }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->email }}</div>
                             </div>
                         </div>
                         
+                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
+                            <div class="row">
+                                <label class="col-sm-12 col-md-3">Linen center</label>
+                                <div class="col-sm-12 col-md-1">:</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->linen_center }}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-12 col-md-3">Description</label>
+                                <div class="col-sm-12 col-md-1">:</div>
+                                <div class="col-sm-12 col-md-8"></div>
+                            </div>
+                            <textarea disabled class="form-control form-control-sm" aria-readonly="true" 
+                                name="description" type="textarea" rows="4" 
+                                placeholder="-- description --" 
+                                value="{{ $data->description }}">{{ $data->description }}</textarea>
+                        </div>
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <a href="{{ route('register_linen_index') }}" class="btn bg-primary" style="width: 200px;">
+                        <a href="{{ route('laundry_plant_index') }}" class="btn bg-primary" style="width: 200px;">
                           <i class="mr-1 fa fa-arrow-left"></i>
                           Back
                         </a>

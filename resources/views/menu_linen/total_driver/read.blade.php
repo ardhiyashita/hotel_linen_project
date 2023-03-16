@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Update Driver')
+@section('title', 'Detail Driver')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Update Driver</h1>
+            <h1>Detail Driver</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Update Driver</li>
+              <li class="breadcrumb-item active">Detail Driver</li>
             </ol>
           </div>
         </div>

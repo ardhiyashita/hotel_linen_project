@@ -10,7 +10,7 @@ class RegisterHistory extends Model
     use HasFactory;
     protected $guards = [];
     protected $table = 'tb_register_history';
-    protected $fillable = ['id_register_history', 'id_jabatan', 'id_linen', 'register_date', 'template_code', 'template_name', 'linen_type', 'size', 'total', 'supplier', 'color'];
+    protected $fillable = ['id', 'id_jabatan', 'id_linen', 'register_date', 'template_code', 'template_name', 'linen_type', 'size', 'total', 'supplier', 'color'];
 
     public function jabatan()
     {
@@ -19,6 +19,6 @@ class RegisterHistory extends Model
 
     public function linen()
     {
-        return $this->belongsTo(Linen::class, 'id_linen', 'id_linen');
+        return $this->belongsTo(Linen::class, 'id', 'id_linen');
     }
 }
