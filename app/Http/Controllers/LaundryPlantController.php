@@ -99,4 +99,10 @@ class LaundryPlantController extends Controller
         LaundryPlant::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = LaundryPlant::find($id);
+        return view('menu_linen/laundry_plant/read', compact('data'));
+    }
 }

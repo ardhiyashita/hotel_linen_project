@@ -89,4 +89,10 @@ class SupplierController extends Controller
         Supplier::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = Supplier::find($id);
+        return view('sidebar_linen/preset/supplier/read', compact('data'));
+    }
 }

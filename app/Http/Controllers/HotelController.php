@@ -102,4 +102,10 @@ class HotelController extends Controller
         Hotel::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = Hotel::find($id);
+        return view('menu_linen/total_hotel/read', compact('data'));
+    }
 }

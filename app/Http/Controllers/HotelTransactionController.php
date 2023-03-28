@@ -16,8 +16,9 @@ class HotelTransactionController extends Controller
         return view('menu_linen/hotel_transaction/index', compact('data'));
     }
 
-    public function read()
+    public function read($id)
     {
+        $data = HotelTransaction::find($id);
         return view('menu_linen/hotel_transaction/read', compact('data'));
     }
 }

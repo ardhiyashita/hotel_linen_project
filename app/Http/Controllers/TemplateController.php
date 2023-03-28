@@ -115,4 +115,10 @@ class TemplateController extends Controller
         Template::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = Template::find($id);
+        return view('menu_linen/total_template/read', compact('data'));
+    }
 }

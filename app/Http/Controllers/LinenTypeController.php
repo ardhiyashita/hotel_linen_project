@@ -94,4 +94,10 @@ class LinenTypeController extends Controller
         LinenType::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = LinenType::find($id);
+        return view('sidebar_linen/preset/linen_type/read', compact('data'));
+    }
 }

@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Detail Hotel Transaction')
+@section('title', 'Detail Packing')
 
 @section('content')
 
@@ -13,19 +13,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Detail Hotel Transaction</h1>
+            <h1>Detail Packing</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Detail Hotel Transaction</li>
+              <li class="breadcrumb-item active">Detail Packing</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{ route('hotel_transaction_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('packing_update_save', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- Main content -->
     <section class="content">
@@ -38,22 +38,29 @@
               <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Trans code</label>
+                                <label class="col-sm-12 col-md-3">Packing code</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->trans_code }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->packing_code }}</div>
                             </div>
-                        </div>   
+                        </div> 
                         
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Trans date</label>
+                                <label class="col-sm-12 col-md-3">Packing date</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->trans_date }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->packing_date }}</div>
                             </div>
                         </div>
+
+                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
+                            <div class="row">
+                                <label class="col-sm-12 col-md-3">Packed by</label>
+                                <div class="col-sm-12 col-md-1">:</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->packed_by }}</div>
+                            </div>
+                        </div>   
 
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
@@ -62,7 +69,7 @@
                                 <div class="col-sm-12 col-md-8"> {{ $data->hotel_code }}</div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
                                 <label class="col-sm-12 col-md-3">Hotel name</label>
@@ -71,92 +78,53 @@
                             </div>
                         </div>
                         
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Clean</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->clean }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Soil</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->soil }}</div>
-                            </div>
-                        </div> 
-                        
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Stain</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->stain }}</div>
-                            </div>
-                        </div>
-                        
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Torn</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->torn }}</div>
-                            </div>
-                        </div>    
                         
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Tran status</label>
+                                <label class="col-sm-12 col-md-3">Total</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->trans_status }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->total }}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
+                            <div class="row">
+                                <label class="col-sm-12 col-md-3">Status</label>
+                                <div class="col-sm-12 col-md-1">:</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->status }}</div>
                             </div>
                         </div>
 
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Delivery status</label>
+                                <label class="col-sm-12 col-md-3">Driver pickup</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->delivery_status }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->driver_pickup_status }}</div>
                             </div>
                         </div>
 
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Discard</label>
+                                <label class="col-sm-12 col-md-3">Manualy delivery out</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->discard }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->manual_delivery_out }}</div>
                             </div>
                         </div>
 
                         <div class="form-group" style="border-bottom: 2px solid #aba09f;">
                             <div class="row">
-                                <label class="col-sm-12 col-md-3">Treatment</label>
+                                <label class="col-sm-12 col-md-3">Manual to hotel</label>
                                 <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->treatment }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Request linen</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->request_linen }}</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="border-bottom: 2px solid #aba09f;">
-                            <div class="row">
-                                <label class="col-sm-12 col-md-3">Driver</label>
-                                <div class="col-sm-12 col-md-1">:</div>
-                                <div class="col-sm-12 col-md-8"> {{ $data->driver }}</div>
+                                <div class="col-sm-12 col-md-8"> {{ $data->manual_to_hotel }}</div>
                             </div>
                         </div>
                         
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <a href="{{ route('hotel_transaction_index') }}" class="btn bg-primary" style="width: 200px;">
+                        <a href="{{ route('packing_index') }}" class="btn bg-primary" style="width: 200px;">
                           <i class="mr-1 fa fa-arrow-left"></i>
                           Back
                         </a>

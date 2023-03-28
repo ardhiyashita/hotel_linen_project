@@ -1,6 +1,6 @@
 @extends('layouts/hotel_linen/master')
 
-@section('title', 'Internal Transaction')
+@section('title', 'Packing')
 
 @section('content')
 
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Internal Transaction</h1>
+            <h1>Packing</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Internal Transaction</li>
+              <li class="breadcrumb-item active">Packing</li>
             </ol>
           </div>
         </div>
@@ -33,67 +33,61 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_category_create') }}" class="btn bg-primary" style="width: 300px;"> 
-                  <i class="mr-1 fas fa-plus">
-                  </i>
-                  Add Data</a>
-              </div>
+
+                
               <!-- /.card-header -->
               <div class="card-body">             
                 <table id="example1" class="table table-bordered table-striped">
-                <thead style="font-size: 12px;">
+                <thead>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Trans code</th>
-                                <th class="border-top-0" style="text-align: center">Tran date</th>
-                                <th class="border-top-0" style="text-align: center">Type</th>
-                                <th class="border-top-0" style="text-align: center">Laundry</th>
+                                <th class="border-top-0" style="text-align: center">Packing code</th>
+                                <th class="border-top-0" style="text-align: center">Packing date</th>
+                                <th class="border-top-0" style="text-align: center">Packed by</th>
+                                <th class="border-top-0" style="text-align: center">Hotel code</th>
+                                <th class="border-top-0" style="text-align: center">Hotel name</th>
                                 <th class="border-top-0" style="text-align: center">Total</th>
                                 <th class="border-top-0" style="text-align: center">Status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </thead>
-                        <tfoot style="font-size: 12px;">
+                        <tfoot>
                             <tr>
                                 <th class="border-top-0" style="text-align: center">No</th>
-                                <th class="border-top-0" style="text-align: center">Trans code</th>
-                                <th class="border-top-0" style="text-align: center">Trans date</th>
-                                <th class="border-top-0" style="text-align: center">Type</th>
-                                <th class="border-top-0" style="text-align: center">Laundry</th>
+                                <th class="border-top-0" style="text-align: center">Packing code</th>
+                                <th class="border-top-0" style="text-align: center">Packing date</th>
+                                <th class="border-top-0" style="text-align: center">Packed by</th>
+                                <th class="border-top-0" style="text-align: center">Hotel code</th>
+                                <th class="border-top-0" style="text-align: center">Hotel name</th>
                                 <th class="border-top-0" style="text-align: center">Total</th>
                                 <th class="border-top-0" style="text-align: center">Status</th>
                                 <th class="border-top-0" style="text-align: center">Action</th>
                             </tr>
                         </tfoot>
-                        <tbody style="font-size: 12px;">
+                        <tbody>
                             @foreach($data as $val)
                             <tr>
                                 <td>{{ $loop->iteration}}</td>
-                                <td>{{ $val->trans_code}}</td>
-                                <td>{{ $val->trans_date }}</td>
-                                <td>{{ $val->type }}</td>
-                                <td>{{ $val->laundry }}</td>
+                                <td>{{ $val->packing_code}}</td>
+                                <td>{{ $val->packing_date }}</td>
+                                <td>{{ $val->packed_by }}</td>
+                                <td>{{ $val->hotel_code }}</td>
+                                <td>{{ $val->hotel_name }}</td>
                                 <td>{{ $val->total }}</td>
                                 <td>{{ $val->status }}</td>
-                                <td>
-                                    <form action="" method="POST">
-                                        <div class="" role="group" aria-label="Basic example">
-                                        @csrf
-                                        <a class="btn bg-warning" href="">
-                                          <i class="fas fa-edit"></i>
+
+                                    <td>
+                                        <a class="btn bg-success" href="{{ route('packing_read', $val->id) }}">
+                                          <i class="fas fa-eye"></i>
                                           </a>
-                                        <a type="submit" class="btn bg-danger"
-                                            onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
-                                          <i class="fas fa-trash"></i>
-                                        </a>
-                                        </div>
-                                    </form>
-                                </td>
+                                      </td>
                             </tr>
                             @endforeach
                         </tbody>
-                </table>
-              </div>
+                    </table>
+
+
+                    </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

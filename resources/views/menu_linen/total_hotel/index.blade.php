@@ -84,6 +84,9 @@
                                           <a class="btn bg-warning" href="{{ route('hotel_update', $val->id) }}">
                                             <i class="fas fa-edit"></i>
                                             </a>
+                                            <a class="btn bg-success" href="{{ route('hotel_read', $val->id) }}">
+                                              <i class="fas fa-eye"></i>
+                                              </a>
                                         <button type="submit" class="btn bg-danger"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>

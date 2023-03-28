@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Hotel;
 use App\Models\LaundryPlant;
 use App\Models\Linen;
+use App\Models\LinenCategory;
+use App\Models\LinenType;
+use App\Models\Ownership;
 use App\Models\Supplier;
 use App\Models\Template;
 use Illuminate\Http\Request;
@@ -20,11 +23,13 @@ class LinenController extends Controller
 
     public function create()
     {
-
         $template = Template::all();
         $hotel = Hotel::all();
         $supplier = Supplier::all();
-        return view('menu_linen/total_linen/create', compact('template', 'hotel', 'supplier'));
+        $linen_type = LinenType::all();
+        $linen_category = LinenCategory::all();
+        $ownership = Ownership::all();
+        return view('menu_linen/total_linen/create', compact('template', 'hotel', 'supplier', 'linen_type', 'linen_category', 'ownership'));
     }
 
     public function create_save(Request $request)
@@ -105,7 +110,13 @@ class LinenController extends Controller
     public function delete($id)
     {
         // dd($id);
-        Hotel::find($id)->delete();
+        Linen::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function read($id)
+    {
+        $data = Linen::find($id);
+        return view('menu_linen/total_linen/read', compact('data'));
     }
 }

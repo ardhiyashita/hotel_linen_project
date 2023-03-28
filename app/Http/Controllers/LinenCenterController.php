@@ -86,4 +86,10 @@ class LinenCenterController extends Controller
         LinenCenterDetail::find($id)->delete();
         return redirect()->back();
     }
+
+    public function read($id)
+    {
+        $data = LinenCenterDetail::find($id);
+        return view('menu_linen/linen_center/read', compact('data'));
+    }
 }
