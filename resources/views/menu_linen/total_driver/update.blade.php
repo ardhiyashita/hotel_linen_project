@@ -109,9 +109,9 @@
                         @enderror
 
                         <div class="form-group">
-                            Note
-                            <textarea class="form-control form-control-sm" name="note" type="textarea" rows="4" placeholder="-- Note --" value="{{ $data->note }}"></textarea>
-                        </div>
+                          Note
+                          <input class="form-control form-control-sm" name="note" type="input" rows="4" placeholder="-- note --" value="{{ $data->note }}">
+                      </div>
                     </div>
 
                     <div class="col-sm-12 col-md-6">

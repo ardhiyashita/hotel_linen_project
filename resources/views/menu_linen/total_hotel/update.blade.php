@@ -75,11 +75,8 @@
 
                         <div class="form-group">
                           Address
-                          <textarea class="form-control form-control-sm" name="address" type="text" placeholder="-- address --" value="{{ $data->address }}"></textarea>
+                          <input class="form-control form-control-sm" name="address" type="input" rows="4" placeholder="-- address --" value="{{ $data->address }}">
                       </div>
-                      @error('address')
-                      <div class="alert alert-danger" role="alert">{{$message}}</div>
-                      @enderror
                         
                     </div>
                     <div class="col-sm-12 col-md-6">
@@ -110,11 +107,8 @@
 
                         <div class="form-group">
                           Note
-                          <textarea class="form-control form-control-sm" name="note" type="text" placeholder="-- note --" value="{{ $data->note }}"></textarea>
+                          <input class="form-control form-control-sm" name="note" type="input" rows="4" placeholder="-- note --" value="{{ $data->note }}">
                       </div>
-                      @error('note')
-                      <div class="alert alert-danger" role="alert">{{$message}}</div>
-                      @enderror
 
                     </div>
 
