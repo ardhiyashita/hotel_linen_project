@@ -167,11 +167,16 @@
 
                         <div class="form-group">
                           Sew by
-                          <input class="form-control form-control-sm" name="sew_by" type="text" placeholder="-- sew by --">
-                        </div>
-                        @error('sew_by')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
-                        @enderror
+                          <select class="selectpicker form-control form-control-sm" name="sew_by" id="sew_by" data-live-search="true">
+                          <option>-- Select Sew By --</option>
+                              {{-- @foreach($sew_by as $item)
+                              <option value="{{ $item->id }}">{{ $item->name }}</option>
+                          @endforeach --}}
+                          </select>
+                          </div>
+                          @error('sew_by')
+                          <div class="alert alert-danger" role="alert">{{$message}}</div>
+                          @enderror
 
                         <div class="form-group">
                           Max cycle

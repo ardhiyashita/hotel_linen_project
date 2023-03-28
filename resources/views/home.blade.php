@@ -145,7 +145,7 @@
                         <div class="inner">
                             <h3>0</h3>
 
-                        <p>Total Linen Template</p>
+                        <p>Total Template</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-shower" style="font-size: 60px"></i>
