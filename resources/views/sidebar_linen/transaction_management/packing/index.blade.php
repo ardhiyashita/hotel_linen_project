@@ -77,7 +77,7 @@
                                 <td>{{ $val->status }}</td>
 
                                     <td>
-                                        <a class="btn bg-success" href="{{ route('packing_read', $val->id) }}">
+                                        <a class="btn btn-success btn-sm" href="{{ route('packing_read', $val->id) }}">
                                           <i class="fas fa-eye"></i>
                                           </a>
                                       </td>

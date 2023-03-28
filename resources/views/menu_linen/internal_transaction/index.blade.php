@@ -70,7 +70,7 @@
                                 <td>{{ $val->total_packing }}</td>
                                 <td>{{ $val->delivery_status }}</td>
                                 <td>
-                                  <a class="btn bg-success" href="{{ route('internal_transaction_read', $val->id) }}">
+                                  <a class="btn btn-success btn-sm" href="{{ route('internal_transaction_read', $val->id) }}">
                                     <i class="fas fa-eye"></i>
                                     </a>
                                 </td>

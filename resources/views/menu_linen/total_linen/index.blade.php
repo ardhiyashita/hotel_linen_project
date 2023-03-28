@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header">
-              <a href="{{ route('linen_create') }}" class="btn bg-primary" style="width: 200px;"> 
+              <a href="{{ route('linen_create') }}" class="btn btn-primary btn-sm" style="width: 200px;"> 
                   <i class="mr-1 fas fa-plus">
                   </i>
                   Add Data</a>
@@ -88,10 +88,10 @@
                                   <form action="{{ route('linen_delete', $val->id) }}" method="POST">
                                     <div class="" role="group" aria-label="Basic example">
                                     @csrf
-                                            <a class="btn bg-success" href="{{ route('linen_read', $val->id) }}">
+                                            <a class="btn btn-success btn-sm" href="{{ route('linen_read', $val->id) }}">
                                               <i class="fas fa-eye"></i>
                                               </a>
-                                        <button type="submit" class="btn bg-danger"
+                                        <button type="submit" class="btn btn-danger btn-sm"
                                             onclick="return confirm('apakah kamu yakin menghapus data ini ?')">
                                           <i class="fas fa-trash"></i>
                                         </button>
