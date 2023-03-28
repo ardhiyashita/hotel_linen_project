@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class UserPegawai extends Model
+class RoleUser extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $guards = [];
-    protected $table = 'tb_user';
-    protected $fillable = ['id', 'id_jabatan', 'id_laundry_plant', 'first_name', 'last_name', 'linen_center', 'laundry_plant', 'phone', 'email'];
+    protected $table = 'tb_role_user';
+    protected $fillable = ['id', 'id_jabatan', 'role', 'description', 'role_type'];
 
     public function jabatan()
     {
         return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id_jabatan');
     }
 
-    public function laundry_plant()
+    public function role_user()
     {
-        return $this->belongsTo(LaundryPlant::class, 'id', 'id_laundry_plant');
+        return $this->belongsTo(RoleUser::class, 'id', 'id');
     }
 }

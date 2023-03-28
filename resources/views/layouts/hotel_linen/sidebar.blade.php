@@ -233,13 +233,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('user_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('role_user_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Role</p>
                 </a>
