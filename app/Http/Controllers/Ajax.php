@@ -11,6 +11,7 @@ class Ajax extends Controller
 {
     public function getlinenType(Request $req)
     {
+        // get linen type
         $q = LinenType::find($req->id);
         return response()->json($q);
     }
