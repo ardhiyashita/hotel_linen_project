@@ -192,10 +192,25 @@
 @section('js')
     <script>
         $(document).ready(function() {
+            // change linen type
             $('#linen_type').change(function(e) {
                 e.preventDefault();
                 var id = $(this).val();
-                alert(id);
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('getlinentype') }}",
+                    data: {
+                        id: id
+                    },
+                    dataType: "json",
+                    success: function(res) {
+                        console.log(res);
+                        $('[name="linen_code"]').val(res.linen_code);
+                        $('[name="size"]').val(res.size);
+                        $('[name="color"]').val(res.color);
+                        $('[name="max_cycle"]').val(res.max_cycle);
+                    }
+                });
             });
         });
     </script>
