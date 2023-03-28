@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SupplierController extends Controller
 {
@@ -45,6 +46,7 @@ class SupplierController extends Controller
             'note' => $request->note,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -80,6 +82,7 @@ class SupplierController extends Controller
         $data->note = $request->note;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -87,6 +90,8 @@ class SupplierController extends Controller
     {
         // dd($id);
         Supplier::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

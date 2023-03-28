@@ -17,7 +17,7 @@ class UserPegawai extends Model
 
     public function jabatan()
     {
-        return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id_jabatan');
+        return $this->belongsTo(Jabatan::class, 'id', 'id');
     }
 
     public function laundry_plant()

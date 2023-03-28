@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LaundryPlant;
 use App\Models\UserPegawai;
+use App\Models\LaundryPlant;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -47,6 +48,7 @@ class UserController extends Controller
             'email' => $request->email,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -84,6 +86,7 @@ class UserController extends Controller
         $data->email = $request->email;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -91,6 +94,8 @@ class UserController extends Controller
     {
         // dd($id);
         UserPegawai::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

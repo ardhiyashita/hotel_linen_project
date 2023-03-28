@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class LinenToReceiveController extends Controller
 {
-    public function index(Type $var = null)
+    public function index()
     {
-        $data = LinenToReceiveController::all();
+        $data = LinenToReceive::all();
 
         return view('menu_linen/linen_to_receive/index', compact('data'));
     }

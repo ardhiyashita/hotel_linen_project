@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\LaundryPlant;
-use App\Models\LinenCenterDetail;
 use Illuminate\Http\Request;
+use App\Models\LinenCenterDetail;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LaundryPlantController extends Controller
 {
@@ -50,6 +51,7 @@ class LaundryPlantController extends Controller
             'description' => $request->description,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -90,6 +92,7 @@ class LaundryPlantController extends Controller
         $data->description = $request->description;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -97,6 +100,8 @@ class LaundryPlantController extends Controller
     {
         // dd($id);
         LaundryPlant::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

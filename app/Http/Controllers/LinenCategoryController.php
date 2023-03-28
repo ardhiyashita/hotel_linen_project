@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LinenCategory;
 use Illuminate\Http\Request;
+use App\Models\LinenCategory;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LinenCategoryController extends Controller
 {
@@ -38,6 +39,7 @@ class LinenCategoryController extends Controller
             'description' => $request->description,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -65,6 +67,7 @@ class LinenCategoryController extends Controller
         $data->description = $request->description;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -72,6 +75,8 @@ class LinenCategoryController extends Controller
     {
         // dd($id);
         LinenCategory::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

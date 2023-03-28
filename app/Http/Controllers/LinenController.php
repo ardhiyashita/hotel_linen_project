@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
-use App\Models\LaundryPlant;
 use App\Models\Linen;
-use App\Models\LinenCategory;
-use App\Models\LinenType;
-use App\Models\Ownership;
 use App\Models\Supplier;
 use App\Models\Template;
+use App\Models\LinenType;
+use App\Models\Ownership;
+use App\Models\LaundryPlant;
 use Illuminate\Http\Request;
+use App\Models\LinenCategory;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LinenController extends Controller
 {
@@ -23,13 +24,13 @@ class LinenController extends Controller
 
     public function create()
     {
-        $template = Template::all();
-        $hotel = Hotel::all();
-        $supplier = Supplier::all();
-        $linen_type = LinenType::all();
-        $linen_category = LinenCategory::all();
-        $ownership = Ownership::all();
-        return view('menu_linen/total_linen/create', compact('template', 'hotel', 'supplier', 'linen_type', 'linen_category', 'ownership'));
+        // $template = Template::all();
+        // $hotel = Hotel::all();
+        // $supplier = Supplier::all();
+        // $linen_type = LinenType::all();
+        // $linen_category = LinenCategory::all();
+        // $ownership = Ownership::all();
+        return view('menu_linen/total_linen/create');
     }
 
     public function create_save(Request $request)
@@ -62,6 +63,7 @@ class LinenController extends Controller
             'note' => $request->note,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -104,6 +106,7 @@ class LinenController extends Controller
         $data->note = $request->note;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diubah');
         return redirect()->back();
     }
 
@@ -111,6 +114,8 @@ class LinenController extends Controller
     {
         // dd($id);
         Linen::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

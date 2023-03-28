@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Hotel;
 use App\Models\LaundryPlant;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HotelController extends Controller
 {
@@ -50,7 +52,7 @@ class HotelController extends Controller
             'address' => $request->address,
             'note' => $request->note,
         ]);
-
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -80,7 +82,7 @@ class HotelController extends Controller
 
         $data = Hotel::find($id);
         $laundry_plant = LaundryPlant::where('id', '=', $data->id_laundry_plant)->first();
-        //dd($linen_center);
+        // dd($laundry_plant);
 
         $data->id_laundry_plant = $request->laundry_plant;
         $data->hotel_code = $request->hotel_code;
@@ -93,6 +95,7 @@ class HotelController extends Controller
         $data->note = $request->note;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -100,6 +103,8 @@ class HotelController extends Controller
     {
         // dd($id);
         Hotel::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

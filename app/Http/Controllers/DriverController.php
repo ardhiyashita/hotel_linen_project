@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Driver;
 use App\Models\LaundryPlant;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DriverController extends Controller
 {
@@ -49,6 +50,7 @@ class DriverController extends Controller
             'company' => $request->company,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -89,6 +91,7 @@ class DriverController extends Controller
         $data->note = $request->note;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -96,6 +99,8 @@ class DriverController extends Controller
     {
         // dd($id);
         Driver::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LinenType;
 use App\Models\Supplier;
 use App\Models\Template;
+use App\Models\LinenType;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TemplateController extends Controller
 {
@@ -59,6 +60,7 @@ class TemplateController extends Controller
             'year' => $request->year,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -106,6 +108,7 @@ class TemplateController extends Controller
         $data->year = $request->year;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -113,6 +116,8 @@ class TemplateController extends Controller
     {
         // dd($id);
         Template::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

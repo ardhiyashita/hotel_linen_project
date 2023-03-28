@@ -59,7 +59,7 @@
                             Laundry Plant
                             <select class="selectpicker form-control form-control-sm" name="laundry_plant" id="laundry_plant" data-live-search="true">
                                 @foreach($laundry_plant as $item)
-                                    <option value="{{ $data->id }}"
+                                    <option value="{{ $item->id }}"
                                         @if($data->id_laundry_plant == $item->id)
                                             {{'selected="selected"'}}
                                         @endif

@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="{{ asset('template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+  @include('sweetalert::alert')
 <div class="wrapper">
 
   <!-- Preloader -->

@@ -26,6 +26,7 @@
     </section>
 
     <form action="{{ route('hotel_create_save') }}" method="POST" enctype="multipart/form-data">
+      
     @csrf
     <!-- Main content -->
     <section class="content">
@@ -110,12 +111,15 @@
                             <i class="mr-1 fas fa-save"></i>
                             Save
                         </button>
+                        
                         <a href="{{ route('hotel_index') }}" class="btn bg-primary" style="width: 200px;">
                           <i class="mr-1 fa fa-arrow-left"></i>
                           Back
                         </a>
                         
                     </div>
+
+                    
                 </div>
               </div>
               <!-- /.card-body -->

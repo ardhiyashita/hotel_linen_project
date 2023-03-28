@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LinenCategory;
 use App\Models\LinenType;
 use Illuminate\Http\Request;
+use App\Models\LinenCategory;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LinenTypeController extends Controller
 {
@@ -48,6 +49,7 @@ class LinenTypeController extends Controller
             'standar_packing' => $request->standar_packing,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -85,6 +87,7 @@ class LinenTypeController extends Controller
         $data->standar_packing = $request->standar_packing;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -92,6 +95,8 @@ class LinenTypeController extends Controller
     {
         // dd($id);
         LinenType::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

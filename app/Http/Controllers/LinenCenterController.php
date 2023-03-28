@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LinenCenterDetail;
 use Illuminate\Http\Request;
+use App\Models\LinenCenterDetail;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LinenCenterController extends Controller
 {
@@ -44,6 +45,7 @@ class LinenCenterController extends Controller
             'description' => $request->description,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -77,6 +79,7 @@ class LinenCenterController extends Controller
         $data->description = $request->description;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -84,6 +87,8 @@ class LinenCenterController extends Controller
     {
         // dd($id);
         LinenCenterDetail::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 

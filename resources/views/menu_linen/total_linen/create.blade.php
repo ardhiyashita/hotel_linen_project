@@ -50,9 +50,9 @@
                           Template
                           <select class="selectpicker form-control form-control-sm" name="template" id="template" data-live-search="true">
                           <option>-- Select Template --</option>
-                              @foreach($template as $item)
+                              {{-- @foreach($template as $item)
                               <option value="{{ $item->id }}">{{ $item->name }}</option>
-                          @endforeach
+                          @endforeach --}}
                       </select>
                       </div>
                       @error('template')
@@ -130,9 +130,9 @@
                             Linen type
                             <select class="selectpicker form-control form-control-sm" name="linen_type" id="linen_type" data-live-search="true">
                             <option>-- Select Linen type --</option>
-                                @foreach($linen_type as $item)
+                                {{-- @foreach($linen_type as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            @endforeach
+                            @endforeach --}}
                             </select>
                         </div>
                         @error('linen_type')
@@ -143,9 +143,9 @@
                           Linen category
                           <select class="selectpicker form-control form-control-sm" name="linen_category" id="linen_category" data-live-search="true">
                           <option>-- Select Linen category --</option>
-                              @foreach($linen_category as $item)
+                              {{-- @foreach($linen_category as $item)
                               <option value="{{ $item->id }}">{{ $item->name }}</option>
-                          @endforeach
+                          @endforeach --}}
                       </select>
                       </div>
                       @error('linen_category')
@@ -156,9 +156,9 @@
                         Ownership
                         <select class="selectpicker form-control form-control-sm" name="ownership" id="ownership" data-live-search="true">
                         <option>-- Select Ownership --</option>
-                            @foreach($ownership as $item)
+                            {{-- @foreach($ownership as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
-                        @endforeach
+                        @endforeach --}}
                         </select>
                         </div>
                         @error('ownership')

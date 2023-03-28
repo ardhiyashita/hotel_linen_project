@@ -34,9 +34,9 @@
             <div class="card">
               <div class="card-header">
               <a href="{{ route('hotel_create') }}" class="btn bg-primary" style="width: 200px;"> 
-                  <i class="mr-1 fas fa-plus">
-                  </i>
-                  Add Data</a>
+                  <i class="mr-1 fas fa-plus"></i>
+                  Add Data
+              </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">             

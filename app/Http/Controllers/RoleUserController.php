@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jabatan;
 use App\Models\RoleUser;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RoleUserController extends Controller
 {
@@ -41,6 +42,7 @@ class RoleUserController extends Controller
             'role_type' => $role_type_id->nama_jabatan,
         ]);
 
+        Alert::success('Congrats', 'Data Berhasil Disimpan');
         return redirect()->back();
     }
 
@@ -70,6 +72,7 @@ class RoleUserController extends Controller
         $data->role_type = $role_type->nama_jabatan;
         $data->save();
 
+        Alert::success('Congrats', 'Data Berhasil Diupdate');
         return redirect()->back();
     }
 
@@ -77,6 +80,8 @@ class RoleUserController extends Controller
     {
         // dd($id);
         RoleUser::find($id)->delete();
+
+        Alert::success('Congrats', 'Data Berhasil Dihapus');
         return redirect()->back();
     }
 
