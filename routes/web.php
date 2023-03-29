@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::controller(Ajax::class)->group(function () {
         Route::get('/getlinentype', 'getlinenType')->name('getlinentype');
+        Route::get('/gettemplate', 'getTemplate')->name('gettemplate');
     });
 
     Route::controller(LinenCategoryController::class)->group(function () {
