@@ -67,7 +67,7 @@
                                 <td>{{ $val->linen_type }}</td>
                                 <td>{{ $val->total }}</td>
                                 <td>
-                                  <a class="btn bg-success" href="{{ route('register_linen_read', $val->id) }}">
+                                  <a class="btn btn-success btn-sm" href="{{ route('register_linen_read', $val->id) }}">
                                     <i class="fas fa-eye"></i>
                                     </a>
                                 </td>
