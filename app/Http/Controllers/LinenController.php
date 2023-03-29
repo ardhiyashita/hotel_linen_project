@@ -25,19 +25,11 @@ class LinenController extends Controller
     public function create()
     {
         $data['template'] = Template::all();
-<<<<<<< Updated upstream
         $data['hotel'] = Hotel::all();
         $data['supplier'] = Supplier::all();
         $data['linen_type'] = LinenType::all();
         $data['linen_category'] = LinenCategory::all();
         // $data['ownership'] = Ownership::all();
-=======
-        // $hotel = Hotel::all();
-        // $supplier = Supplier::all();
-        // $linen_type = LinenType::all();
-        // $linen_category = LinenCategory::all();
-        // $ownership = Ownership::all();
->>>>>>> Stashed changes
         return view('menu_linen/total_linen/create', $data);
     }
 
