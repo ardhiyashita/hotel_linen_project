@@ -45,6 +45,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/coba', [CobaController::class, 'coba']);
     Route::get('/', [DashboardController::class, 'index'])->name('home');
 
+    Route::controller(Ajax::class)->group(function () {
+        Route::get('/gettemplate', 'getTemplate')->name('gettemplate');
+    });
 
     Route::controller(LinenCategoryController::class)->group(function () {
         Route::get('/linen_category_index', 'index')->name('linen_category_index');
