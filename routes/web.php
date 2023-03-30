@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Ajax;
 use App\Models\LinenType;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CobaController;
