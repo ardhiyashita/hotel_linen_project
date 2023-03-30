@@ -47,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
 
     Route::controller(Ajax::class)->group(function () {
-        Route::get('/getlinentype', 'getlinenType')->name('getlinentype');
         Route::get('/gettemplate', 'getTemplate')->name('gettemplate');
     });
 
