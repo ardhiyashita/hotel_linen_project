@@ -34,7 +34,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/wels', function () {
     return view('welcome');
 });
 

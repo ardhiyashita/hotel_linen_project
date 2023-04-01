@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FormController;
+use App\Http\Controllers\API\Template;
+use App\Http\Controllers\API\TemplateApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['middleware' => 'auth:sanctum'], function(){
+// 
+Route::get('linen', [TemplateApi::class, 'get']);
+Route::post('linen/insert', [TemplateApi::class, 'insert']);
+
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/form', [FormController::class, 'index']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });
