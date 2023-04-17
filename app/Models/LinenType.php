@@ -13,7 +13,7 @@ class LinenType extends Model
 
     protected $guards = [];
     protected $table = 'tb_linen_type';
-    protected $fillable = ['id_linen_type', 'id_jabatan', 'id_linen_category', 'linen_code', 'linen_type', 'linen_category', 'size', 'color', 'max_cycle', 'standar_packing'];
+    protected $fillable = ['id', 'id_jabatan', 'id_linen_category', 'linen_code', 'linen_type', 'linen_category', 'size', 'color', 'max_cycle', 'standar_packing'];
 
     public function jabatan()
     {

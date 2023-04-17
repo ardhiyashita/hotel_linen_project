@@ -22,6 +22,6 @@ class Template extends Model
 
     public function linen_type()
     {
-        return $this->belongsTo(LinenType::class, 'id', 'id_linen_type');
+        return $this->belongsTo(LinenType::class, 'id_linen_type', 'id');
     }
 }
