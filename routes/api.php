@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FormController;
+use App\Http\Controllers\API\KategoriLinenApi;
+use App\Http\Controllers\API\LaundryPlantApi;
 use App\Http\Controllers\API\Template;
 use App\Http\Controllers\API\TemplateApi;
 use Illuminate\Http\Request;
@@ -23,8 +25,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // 
+
 Route::get('linen', [TemplateApi::class, 'get']);
 Route::post('linen/insert', [TemplateApi::class, 'insert']);
+
+
+Route::prefix('kategori')->group(function () {
+    Route::get('linen', [KategoriLinenApi::class, 'get']);
+});
+
+Route::prefix('laundry_plant')->group(function () {
+    Route::get('index', [LaundryPlantApi::class, 'get']);
+});
+
 
 // - get kategori,
 // - get linen center,
