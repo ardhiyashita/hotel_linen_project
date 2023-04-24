@@ -26,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('linen', [TemplateApi::class, 'get']);
 Route::post('linen/insert', [TemplateApi::class, 'insert']);
 
+// - get kategori,
+// - get linen center,
+// - get laundry plant
+
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/form', [FormController::class, 'index']);
