@@ -7,7 +7,7 @@ use App\Models\Linen;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
-class TemplateApi extends Controller
+class LinenCenterApiTemplateApi extends Controller
 {
     public function get()
     {
